@@ -2,10 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <script src='vendors/handlebars.js'></script>
+    <script src='vendors/jQuery-v2.2.0.js'></script>
+
     <title>anti-tourist-trap</title>
   </head>
   <body>
     <h1>I will be an anti-tourist-trap</h1>
+    <form id="intitForm">
+      <input type="checkbox" name="POI" value="POI" checked> Local Points of Interest<br>
+        <ul id="subPOIform" class="subform">
+          <input type="checkbox" name="architectural" value="architectural"> Architectural<br>
+          <input type="checkbox" name="natural" value="natural"> Natural <br>
+          <input type="checkbox" name="oddity" value="oddity"> Local oddities <br>
+        </ul>
+      <input type="checkbox" name="veiwpoint" value="veiwpoint" checked> Viewpoints and Lookouts<br>
+      <input id='submitButt' type="submit" value="Submit">
+    </form>
   </body>
-  <script src="server.js" charset="utf-8"></script>
+  <script src="filter.js"></script>
+  <script>
+    filter.handler();
+  </script>
 </html>
