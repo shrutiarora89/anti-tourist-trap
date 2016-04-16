@@ -9,19 +9,16 @@
   </head>
   <body>
     <h1>I will be an anti-tourist-trap</h1>
-    <form id="intitForm">
-      <input type="checkbox" name="POI" value="POI" checked> Local Points of Interest<br>
-        <ul id="subPOIform" class="subform">
-          <input type="checkbox" name="architectural" value="architectural"> Architectural<br>
-          <input type="checkbox" name="natural" value="natural"> Natural <br>
-          <input type="checkbox" name="oddity" value="oddity"> Local oddities <br>
-        </ul>
-      <input type="checkbox" name="veiwpoint" value="veiwpoint" checked> Viewpoints and Lookouts<br>
+    <form id="initForm" >
+      <input type="checkbox" id="inputPOI" class="input" name="POI" value="POI" checked> Local Points of Interest<br>
+      <input type="checkbox" id="inputarchitectural" class="input" name="architectural" value="architectural"> Architectural<br>
+      <input type="checkbox" id="inputnatural" class="input" name="natural" value="natural"> Natural <br>
+      <input type="checkbox" id="inputoddity" class="input" name="oddity" value="oddity"> Local oddities <br>
+      <input type="checkbox" id="inputviewpoint" class="input" name="veiwpoint" value="veiwpoint" checked> Viewpoints and Lookouts<br>
       <input id='submitButt' type="submit" value="Submit">
     </form>
   </body>
   <script src="filter.js"></script>
   <script>
-    filter.handler();
   </script>
 </html>
