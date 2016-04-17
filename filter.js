@@ -1,19 +1,58 @@
 (function(module) {
-  var filter = {}
+  var filterer = {}
 
-  filter.preferances = [];
+  filterer.preferances = [];
+  filterer.filteredResults = [];
+  var placesFullList = [
+    {"name": "Space Needle", "category": ["architectural", "POI"]},
+    {"name": "Troll", "category":  ["oddity",  "POI"]},
+    {"name": "cool Rock", "category": ["natural"]},
+  ];
 
-
-$('#initForm').submit("click", function(e){
+$('#submitButt').on("click", function(e){
   e.preventDefault();
-  var selection = [];
+  filterer.preferances = [];
+  filterer.filteredResults = []
   $('#initForm :checked').each(function(){
-    selection.push($(this).val())
+    filterer.preferances.push($(this).val())
   });
-  filter.preferances = selection
-  console.log(selection);
+  console.log("filterP= " + filterer.preferances);
+  filterer.places();
+  })
 
-})
-
-  module.filter = filter;
+  filterer.places = function () {
+    var prefiltered = placesFullList.filter( function(ele){
+      var result = false
+      for(c in ele.category){
+        if (filterer.preferances.indexOf(ele.category[c]) > -1){
+          result = true
+        }
+      }
+      return result;
+    })
+    console.log(prefiltered)
+    // filterer.preferances.forEach(function(ele){
+    //    console.log(ele)
+    //    var filtered = [];
+    //    for (var i = 0; i < placesFullList.length; i++) {
+    //        for (var j = 0; j < placesFullList[i].category.length; j++) {
+    //          if (ele.indexOf(placesFullList[i].category[j]) > -1) {
+    //            if (!(prefiltered.indexOf(placesFullList[i].category[j])) > -1){
+    //             prefiltered.push(placesFullList[i]);
+    //            }
+    //          };
+    //        };
+    //    };
+    //   console.log(prefiltered)
+      // prefiltered.forEach(function(ele){
+      //      if (filtered.indexOf(ele.name) === -1) {
+      //     filtered.push(ele.name);
+      //     }
+      //   console.log(filtered)
+      //   filterer.filteredResults = filtered
+      //   return filtered;
+      // });
+    // });
+  }
+  module.filterer = filterer;
 })(window);
