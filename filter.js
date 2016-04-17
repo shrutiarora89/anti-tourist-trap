@@ -31,28 +31,6 @@ $('#submitButt').on("click", function(e){
       return result;
     })
     console.log(prefiltered)
-    // filterer.preferances.forEach(function(ele){
-    //    console.log(ele)
-    //    var filtered = [];
-    //    for (var i = 0; i < placesFullList.length; i++) {
-    //        for (var j = 0; j < placesFullList[i].category.length; j++) {
-    //          if (ele.indexOf(placesFullList[i].category[j]) > -1) {
-    //            if (!(prefiltered.indexOf(placesFullList[i].category[j])) > -1){
-    //             prefiltered.push(placesFullList[i]);
-    //            }
-    //          };
-    //        };
-    //    };
-    //   console.log(prefiltered)
-      // prefiltered.forEach(function(ele){
-      //      if (filtered.indexOf(ele.name) === -1) {
-      //     filtered.push(ele.name);
-      //     }
-      //   console.log(filtered)
-      //   filterer.filteredResults = filtered
-      //   return filtered;
-      // });
-    // });
   }
   module.filterer = filterer;
 })(window);
