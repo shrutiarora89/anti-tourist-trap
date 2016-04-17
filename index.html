@@ -1,11 +1,40 @@
-<!DOCTYPE html>
+<!-- ////////////////////////////////////////////////
+//////////////////CLIENT FILE///////////////////
+////////////////////////////////////////////////
+///////////////////CLIENT FILE///////////////// -->
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>anti-tourist-trap</title>
-  </head>
-  <body>
-    <h1>I will be an anti-tourist-trap</h1>
+<head>
+  <title>A Leaflet map!</title>
+  <script src="jquery-2.1.4.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+
+</head>
+<body>
+
+  <div id="map"></div>
+
+  <div id="postgresData"></div>
+
+  <section id="ArrayOfTables">
+       <article class="table-template" data-category="cat">
+            <header>
+              <h1>Name</h1>
+              <h1>url</h1>
+              <h1>location</h1>
+              <h1>description</h1>
+              <h1>hoursOfOperation</h1>
+              <h1>picture</h1>
+            </header>
+        </article>
+  </section>
+
   </body>
-  <script src="server.js" charset="utf-8"></script>
+
+<!-- <script src="markers.json" charset="utf-8"></script> -->
+<script src="poi.js" charset="utf-8"></script>
+<script src="leaflet.js" charset="utf-8"></script>
+
 </html>
