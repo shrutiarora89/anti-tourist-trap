@@ -11,55 +11,54 @@ function Tables (opts) {
 }
 
 Tables.prototype.toHtml = function() {
-   var $newArticle = $('table-template').clone();
-   $newArticle.removeClass('template');
+   var $newArticle = $('.table-template').clone();
+   $newArticle.removeClass('table-template');
    $newArticle.find('h1:first').html(this.name);
-   $newArticle.find('h1:second').html(this.url);
-   $newArticle.find('h1:third').html(this.location);
-   $newArticle.find('h1:fourth').html(this.description);
-   $newArticle.find('h1:fifth').html(this.hoursOfOperation);
+   $newArticle.find('h1:eq(2)').html(this.url);
+   $newArticle.find('h1:eq(3)').html(this.location);
+   $newArticle.find('h1:eq(4)').html(this.description);
+   $newArticle.find('h1:eq(5)').html(this.hoursOfOperation);
    $newArticle.attr('data-category', this.category);
-   $newArticle.find('h1:sixth').html(this.picture);
+   $newArticle.find('h1:eq(6)').html(this.picture);
+   return $newArticle;
  };
 
-  Tables.loadAll = function(markers) {
-    markers.forEach(function(ele) {
+  Tables.loadAll = function(result) {
+    result.forEach(function(ele) {
       ArrayOfTables.all.push(new Tables(ele));
     });
 
     ArrayOfTables.forEach(function(a){
-      $('#ArrayOfTables').append(a.toHtml())
+      $('#ArrayOfTables').append(a.toHtml());
     });
   };
 
-  Tables.fetchAll = function(result){
-  // if (localStorage.rows) {
-  //   Tables.loadAll(localStorage.getItem(JSON.parse(localStorage.rows)));
-  // } else {
-  //      $.getJSON('rows', function (result) {
-  //        console.log(data);
-  //        Poi.loadAll(data);
-  //         localStorage.setItem('rows', JSON.stringify(data));
-  //       });
-  //   }
-};
+Tables.fetchAll = function(result){
 
+// Becky explained the concept. I want to keep it for future reference.
 
-  // Poi.fetchAll = function() {
-  //  if (localStorage.markers) {
-  //    // When rawData is already in localStorage,
-  //    // we can load it by calling the .loadAll function,
-  //    // and then render the index page (using the proper method on the articleView object).
-  //
-  //    Poi.loadAll(localStorage.getItem(JSON.parse(localStorage.markers)));
-  //
-  //  } else {
-  //       $.getJSON('markers.json', function (data) {
-  //         console.log(data);
-  //         Poi.loadAll(data);
-  //          localStorage.setItem('markers', JSON.stringify(data));
-  //         //  articleView.initIndexPage();
-  //
-  //        });
-  //      }
-  //    };
+//Will delete before the final submission.
+      //  $.getJSON('/data', function (result) {
+      //    var f = result.filter(function(row){
+      //      return row.category === "architecture";
+      //    })
+      //    console.log(result);
+      //    console.log(f);
+      //   });
+  $.getJSON('/data', function (result) {
+    result.forEach(function(item) {
+      var table = new Tables(item);
+      // console.log(table.toHtml());
+      $('#ArrayOfTables').append(table.toHtml());
+
+// Scott explained the concept. I want to keep it for future reference.
+      // this is test code for appending something to the DOM.
+      // var el = document.createElement('p');
+      // el.textContent = table.name;
+      // $('#ArrayOfTables').append(el);
+    });
+    // console.log(result);
+  });
+
+}
+Tables.fetchAll();

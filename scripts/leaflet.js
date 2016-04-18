@@ -8,21 +8,11 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
     minZoom: 9
   }).addTo(map);
 //------------------------------------------------------------------
-
-// -----------------------------------------------------------------
-// How to send everything on the localStorage
-// When rawData is already in localStorage,
-// we can load it by calling the .loadAll function,
-// and then render the index page (using the proper method on the articleView object).
-
-// ---------------------------------------------------------
+// / I was trying to make a for loop. I want to keep it for future reference.
 
 // var markerArray=[47.6204,-122.3491,47.922028,-122.290149,47.620816,-122.350487];
-//
 // L.marker([i]).addTo(map);
-
 // for (var i=0;i < markerArray.length;i++){
-//
 // }
 
 var markerSN = L.marker([47.6204,-122.3491]).addTo(map);
