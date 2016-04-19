@@ -1,4 +1,21 @@
-
-ul li {
-  display: inline-block;
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: lavender;
+  height: 2em;
+}
+body {
+  background: url("../images/pikePlaceMarket.png");
+  /*background-attachment: fixed;*/
+}
+.welcome {
+  background-color: lavender;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+#placesTemplate{
+  float:right;
+  width:35%;
+  background-color: lightblue;
 }
