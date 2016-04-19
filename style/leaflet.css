@@ -1,5 +1,15 @@
-#mapid { height: 30%; }
+/*Remove to see the map*/
+#map {
+  height: 100%;
+  width:65%
+}
 
-span{
+/*#name,#url,#location,#description,#hoursOfOperation,#picture{
   display: inline-block;
+}
+tr{
+  display: inline-block;
+}*/
+table{
+  width:70%;
 }

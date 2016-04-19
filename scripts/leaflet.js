@@ -23,7 +23,7 @@ var markerPPM = L.marker([47.609664,-122.341974]).addTo(map);
 var markerSA = L.marker([47.607633,-122.343021]).addTo(map);
 var markerSAM = L.marker([47.607435,-122.338148]).addTo(map);
 var markerSGW = L.marker([47.606352,-122.342474]).addTo(map);
-var markerSGW = L.marker([47.543284,-121.837788]).addTo(map);
+var markerSF = L.marker([47.543284,-121.837788]).addTo(map);
 var markerFT = L.marker([47.651272,-122.347333]).addTo(map);
 
 markerSN.bindPopup("<b>Space_Needle!</b><br>I am a popup.").openPopup();
@@ -34,7 +34,7 @@ markerPPM.bindPopup("<b>Pike Place Market!</b><br>I am a popup.").openPopup();
 markerSA.bindPopup("<b>Seattle Aquarium!</b><br>I am a popup.").openPopup();
 markerSAM.bindPopup("<b>Seattle Art Museum!</b><br>I am a popup.").openPopup();
 markerSGW.bindPopup("<b>Seattle Great Wheel!</b><br>I am a popup.").openPopup();
-markerSGW.bindPopup("<b>Snoqualmine Falls!</b><br>I am a popup.").openPopup();
+markerSF.bindPopup("<b>Snoqualmine Falls!</b><br>I am a popup.").openPopup();
 markerFT.bindPopup("<b>Fremont Troll!</b><br>I am a popup.").openPopup();
 
 // Circle and Polygon

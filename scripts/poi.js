@@ -1,6 +1,6 @@
-var ArrayOfTables = [];
+var arrayOfplaces = [];
 
-function Tables (opts) {
+function Place (opts) {
   this.name = opts.name;
   this.url = opts.url;
   this.location = opts.location;
@@ -8,32 +8,48 @@ function Tables (opts) {
   this.hoursOfOperation = opts.hoursOfOperation;
   this.category = opts.category;
   this.picture = opts.picture;
+  this.Lat_Long = opts.Lat_Long;
 }
 
-Tables.prototype.toHtml = function() {
+Place.prototype.toHtml = function() {
    var $newArticle = $('.table-template').clone();
    $newArticle.removeClass('table-template');
-   $newArticle.find('h1:first').html(this.name);
-   $newArticle.find('h1:eq(2)').html(this.url);
-   $newArticle.find('h1:eq(3)').html(this.location);
-   $newArticle.find('h1:eq(4)').html(this.description);
-   $newArticle.find('h1:eq(5)').html(this.hoursOfOperation);
-   $newArticle.attr('data-category', this.category);
-   $newArticle.find('h1:eq(6)').html(this.picture);
+   $newArticle.find('#name').html(this.name);
+   $newArticle.find('#url').html(this.url);
+   $newArticle.find('#location').html(this.location);
+   $newArticle.find('#description').html(this.description);
+   $newArticle.find('#hoursOfOperation').html(this.hoursOfOperation);
+   $newArticle.find('data-category', this.category);
+   $newArticle.find('#picture').html(this.picture);``
+   $newArticle.find('#Lat_Long').html(this.Lat_Long);
    return $newArticle;
  };
 
-  Tables.loadAll = function(result) {
+// Place.prototype.toHtml = function() {
+//    var $newArticle = $('.table-template').clone();
+//    $newArticle.removeClass('table-template');
+//    $newArticle.find('h1:first').html(this.name);
+//    $newArticle.find('h1:eq(2)').html(this.url);
+//    $newArticle.find('h1:eq(3)').html(this.location);
+//    $newArticle.find('h1:eq(4)').html(this.description);
+//    $newArticle.find('h1:eq(5)').html(this.hoursOfOperation);
+//    $newArticle.attr('data-category', this.category);
+//    $newArticle.find('h1:eq(6)').html(this.picture);
+//    return $newArticle;
+//  };
+
+// Function that pushes the data into the array articlesEducation and insantiating a new object Education using Constructor.
+  Place.loadAll = function(result) {
     result.forEach(function(ele) {
-      ArrayOfTables.all.push(new Tables(ele));
+    arrayOfplaces.push(new Place(ele));
     });
 
-    ArrayOfTables.forEach(function(a){
-      $('#ArrayOfTables').append(a.toHtml());
+  arrayOfplaces.forEach(function(a){
+      $('#placesTemplate').append(a.toHtml());
     });
   };
 
-Tables.fetchAll = function(result){
+Place.fetchAll = function(result){
 
 // Becky explained the concept. I want to keep it for future reference.
 
@@ -47,9 +63,9 @@ Tables.fetchAll = function(result){
       //   });
   $.getJSON('/data', function (result) {
     result.forEach(function(item) {
-      var table = new Tables(item);
-      // console.log(table.toHtml());
-      $('#ArrayOfTables').append(table.toHtml());
+      var place = new Place(item);
+      console.log(place.toHtml());
+      $('#placesTemplate').append(place.toHtml());
 
 // Scott explained the concept. I want to keep it for future reference.
       // this is test code for appending something to the DOM.
@@ -61,4 +77,5 @@ Tables.fetchAll = function(result){
   });
 
 }
-Tables.fetchAll();
+Place.fetchAll();
+Place.loadAll ();
