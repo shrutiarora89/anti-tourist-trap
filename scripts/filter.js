@@ -3,11 +3,6 @@
 
   filterer.preferances = [];
   filterer.filteredResults = [];
-  var placesFullList = [
-    {"name": "Space Needle", "category": ["architectural", "POI"]},
-    {"name": "Troll", "category":  ["oddity",  "POI"]},
-    {"name": "cool Rock", "category": ["natural"]},
-  ];
 
 $('#submitButt').on("click", function(e){
   e.preventDefault();
@@ -21,7 +16,7 @@ $('#submitButt').on("click", function(e){
   })
 
   filterer.places = function () {
-    var prefiltered = placesFullList.filter( function(ele){
+    filterer.filteredResults = arrayOfplaces.filter( function(ele){
       var result = false
       for(c in ele.category){
         if (filterer.preferances.indexOf(ele.category[c]) > -1){
@@ -30,7 +25,7 @@ $('#submitButt').on("click", function(e){
       }
       return result;
     })
-    console.log(prefiltered)
+    console.log(filterer.filteredResults)
   }
   module.filterer = filterer;
 })(window);
