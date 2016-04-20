@@ -6,9 +6,7 @@ function Place (opts) {
   this.location = opts.location;
   this.description = opts.description;
   this.hoursOfOperation = opts.hoursOfOperation;
-  var temp = opts.category
-  this.category = JSON.parse(temp); // This solution is weird and hacky refactor W/ beck and Scott
-  console.log(this.category)
+
   this.picture = opts.picture;
   this.lat_long = opts.lat_long;
 }
@@ -68,7 +66,7 @@ Place.fetchAll = function(result, next){
       var place = new Place(item);
       console.log(item);
       $('#placesTemplate').append(place.toHtml());
-      arrayOfplaces.push(place);
+    
 
 // Scott explained the concept. I want to keep it for future reference.
       // this is test code for appending something to the DOM.
