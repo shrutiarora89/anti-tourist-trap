@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 nav {
   display: flex;
   justify-content: space-around;
@@ -95,4 +96,19 @@ h2 {
   .dropdown-content {
     margin-left: 9em;
   }*/
+=======
+
+ul li {
+  display: inline-block;
+}
+
+ #placesTemplate{
+   float:right;
+   width:33%;
+   display:inline-block;
+ }
+
+#map-data-wrapper{
+  display:inline-block;
+>>>>>>> 4cdb910e5f654f6d09a6f654ac61290b9291c53c
 }
