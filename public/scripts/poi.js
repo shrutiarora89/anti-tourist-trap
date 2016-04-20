@@ -40,13 +40,13 @@ Place.prototype.toHtml = function() {
 
 // Function that pushes the data into the array articlesEducation and insantiating a new object Education using Constructor.
   Place.loadAll = function(result) {
-    result.forEach(function(ele) {
-    arrayOfplaces.push(new Place(ele));
-    });
-
-  arrayOfplaces.forEach(function(a){
-      $('#placesTemplate').append(a.toHtml());
-    });
+  //   result.forEach(function(ele) {
+  //   arrayOfplaces.push(new Place(ele));
+  //   });
+  //
+  // arrayOfplaces.forEach(function(a){
+  //     $('#placesTemplate').append(a.toHtml());
+  //   });
   };
 
 Place.fetchAll = function(result){
@@ -79,3 +79,24 @@ Place.fetchAll = function(result){
 }
 Place.fetchAll();
 Place.loadAll ();
+
+var bgImageArray = ["lonely.jpg", "uluwatu.jpg", "carezza-lake.jpg", "batu-bolong-temple.jpg"],
+base = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/full-",
+secs = 4;
+bgImageArray.forEach(function(img){
+    new Image().src = base + img;
+    // caches images, avoiding white flash between background replacements
+});
+
+function backgroundSequence() {
+	window.clearTimeout();
+	var k = 0;
+	for (i = 0; i < bgImageArray.length; i++) {
+		setTimeout(function(){
+			document.documentElement.style.background = "url(" + base + bgImageArray[k] + ") no-repeat center center fixed";
+			document.documentElement.style.backgroundSize ="cover";
+		if ((k + 1) === bgImageArray.length) { setTimeout(function() { backgroundSequence() }, (secs * 1000))} else { k++; }
+		}, (secs * 1000) * i)
+	}
+}
+backgroundSequence();

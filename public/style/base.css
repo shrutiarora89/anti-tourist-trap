@@ -9,9 +9,6 @@ nav {
 a {
   font-size: xx-large;
 }
-p.intro {
-  background-color: white;
-}
 .welcome {
   background-color: lavender;
   margin-left: 20%;
@@ -23,7 +20,7 @@ p.intro {
   background-color: lightblue;
 }
 div#texttop {
-  background-color: beige;
+  color: blue;
   margin-top: 1%;
   padding: 1rem;
   font-family: sans-serif;
