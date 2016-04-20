@@ -1,0 +1,88 @@
+<!-- ////////////////////////////////////////////////
+//////////////////CLIENT FILE///////////////////
+////////////////////////////////////////////////
+///////////////////CLIENT FILE///////////////// -->
+<html>
+<head>
+  <title>A Leaflet map!</title>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+  <link rel="stylesheet" href="style/base.css">
+  <link rel="stylesheet" href="style/leaflet.css">
+  <!-- <script src="jquery-2.1.4.js" charset="utf-8"></script> -->
+
+</head>
+<body>
+  <ul>
+      <li class="tab" data-content="home"><a href="/home"> Home</a></li>
+      <li class="tab" data-content="about"><a href="/about"> About</a></li>
+      <li class="tab" data-content="map"><a href="/map">Map</a></li>
+  </ul>
+
+<main>
+
+  <section id="home">Home Page Coming SOON!!</section>
+  <section id="about">About Page Coming SOON!!</section>
+
+  <section id="postgresData"></section>
+
+  <!-- <section id="map-data-wrapper"> -->
+      <section id="map">Map Section</section>
+      <section id="placesTemplate">
+           <article class="table-template" data-category="cat">
+                <header>
+                     <!--Name: url location: description: hoursOfOperation: picture:-->
+                       <h1 id="name"></h1>
+                       <p id="location"></p>
+                       <p id="description"></p>
+                       <p id="hoursOfOperation"></p>
+                       <p id="data-category"></p>
+                       <p id="url"></p>
+                       <p id="picture"></p>
+                </header>
+            </article>
+      </section>
+  <!-- </section> -->
+
+  </body>
+</main>
+<script src="scripts/jquery-2.1.4.js" charset="utf-8"></script>
+<script src="scripts/page.js"></script>
+
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<script src="scripts/map.js" charset="utf-8"></script>
+<script src="scripts/poi.js" charset="utf-8"></script>
+<script src="scripts/homeController.js"></script>
+<script src="scripts/mapNdataController.js"></script>
+<script src="scripts/aboutController.js"></script>
+<script src="scripts/routes.js"></script>
+
+</html>
+
+                <!-- <table> ->
+                   <! <tr>
+                     <th>Name</th>
+                     <th>Url</th>
+                     <th>Location</th>
+                     <th>Description</th>
+                     <th>hoursOfOperation</th>
+                     <th>picture</th>
+                     <th>Latitude,Longitude</th>
+                     <th>Address</th>
+                   </tr> -->
+                   <!-- <tr>
+                     <td id="name"></td>
+                     <td id="url"></td>
+                     <td id="location"></td>
+                     <td id="description"></td>
+                     <td id="hoursOfOperation"></td>
+                     <td id="picture"></td>
+                     <td id="Lat_Long"></td>
+                   </tr> -->
+
+                    <!-- <h1></h1>
+                    <h1></h1>
+                    <h1></h1>
+                    <h1></h1>
+                    <h1></h1>
+                    <h1></h1> -->
+                  <!-- </table> -->
