@@ -30,7 +30,7 @@ body {
   margin: 0em;
   background-size: cover;
   background-color: beige;
-  background: url("/images/pug.jpeg")no-repeat center top ;
+  background: url("/images/seattle-background-resize.jpg")no-repeat center top ;
   background-attachment: fixed;
   min-height: 100vh;
   /*height: 100%;*/
