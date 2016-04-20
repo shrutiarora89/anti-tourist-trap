@@ -4,7 +4,7 @@
  // Function that hides all the sections under main HTML element and
  // reveals only the selcted ID section(map)
    mapController.index = function() {
-     $('main > section').hide();
+     $('main .page').hide();
      $('#map').fadeIn();
     //  $('#placesTemplate').fadeIn();
 

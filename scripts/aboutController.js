@@ -4,7 +4,7 @@
  // Function that hides all the sections under main HTML element and
  // reveals only the selcted ID section(about)
    aboutController.index = function() {
-     $('main > section').hide();
+     $('main .page').hide();
      $('#about').fadeIn();
    };
    module.aboutController = aboutController;

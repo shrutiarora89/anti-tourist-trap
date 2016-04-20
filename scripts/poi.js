@@ -1,15 +1,16 @@
 var arrayOfplaces = [];
 
 function Place (opts) {
-  console.log(opts.category)
   this.name = opts.name;
   this.url = opts.url;
   this.location = opts.location;
   this.description = opts.description;
   this.hoursOfOperation = opts.hoursOfOperation;
-  this.category = opts.category;
+  var temp = opts.category
+  this.category = JSON.parse(temp); // This solution is weird and hacky refactor W/ beck and Scott
+  console.log(this.category)
   this.picture = opts.picture;
-  this.Lat_Long = opts.Lat_Long;
+  this.lat_long = opts.lat_long;
 }
 
 Place.prototype.toHtml = function() {
@@ -65,7 +66,7 @@ Place.fetchAll = function(result, next){
   $.getJSON('/data', function (result) {
     result.forEach(function(item) {
       var place = new Place(item);
-      console.log(place);
+      console.log(item);
       $('#placesTemplate').append(place.toHtml());
       arrayOfplaces.push(place);
 
