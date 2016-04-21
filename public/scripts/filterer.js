@@ -13,6 +13,7 @@ $('#submitButt').on("click", function(e){ //this handles the checkboxes and plac
   }); // adds the value of each box with a check into .preferances
   console.log("filterP= " + filterer.preferances);
   filterer.places();
+  mapCoordinates.addPlacesToMap();
   })
 
   filterer.places = function () { //this handles the actual filtering of our data
