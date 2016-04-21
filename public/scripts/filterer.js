@@ -22,7 +22,7 @@ $('#submitButt').on("click", function(e){ //this handles the checkboxes and plac
       for(c in ele.category){ //does this once for each string in the .category []
         if (filterer.preferances.indexOf(ele.category[c]) > -1){
           result = true
-        } // function filters through the user preferances and returns TRUE when the one of the currect objects categorys match and thus adds it to .filteredResults
+        } // function filters through the user preferances and returns TRUE when the one of the currect objects categorys match a preferance and thus adds it to .filteredResults
       }
       return result;
     })
