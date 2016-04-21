@@ -9,26 +9,31 @@
     <link rel="stylesheet" href="style/leaflet.css">
     <link rel="stylesheet" href="style/base.css">
     <script src="vendors/handlebars.js"></script>
-    <!-- <script src="jquery-2.1.4.js" charset="utf-8"></script> -->
-    <!-- <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> -->
+
   </head>
+    <body>
+      <main>
+            <nav id="primary_nav_wrap">
+                <ul>
+                  <li><a href="/home">Home</a>
+                    <ul>
+                    </ul>
+                  </li>
+                  <li><a href="/map">Map</a>
+                  </li>
+                  <li><a href="/about">About</a>
+                  </li>
+              </ul>
+            </nav>
+        <section id="map">Map Section
+          <!-- <div id="mapDiv"></div> -->
+        </section>
+        <section id="homeDiv">
 
-      <body>
-
-        <div class="dropdown">
-          <button class="dropbtn">Go and Explore Seattle</button>
-          <div class="dropdown-content">
-            <a  class="tab" data-content="home" href="/home">HOME</a>
-            <a  class="tab" data-content="about" href="/about">ABOUT</a>
-            <a  class="tab" data-content="map" href="/map">MAP</a>
-
-            <a  class="tab" data-content="map" href="">VIEW POINTS</a>
-            <a  class="tab" data-content="map" href="">ACTIVITIES</a>
-            <a  class="tab" data-content="map" href=>PARKS</a>
-
+          <div id="texttop">
+            <h1 class="title">-WELCOME TO SEATTLE-</h1>
+            <h1 class="intro">This is an app that will guide visitors to their desired locations; from iconic viewpoints (ideal for photos), to outdoor activities. </h1>
           </div>
-        </div>
-
       <main>
         <section id="home">
           <form id="initForm" class="page" >
@@ -39,10 +44,18 @@
             <input type="checkbox" id="inputmuseum" class="input" name="museum" value="museum" checked> Museum<br>
             <input type="checkbox" id="inputtours" class="input" name="tours" value="tours" checked> tours<br>
             <input type="checkbox" id="inputviewpoint" class="input" name="viewpoint" value="viewpoint" checked> Viewpoints and Lookouts<br>
-            <input id='submitButt' type="submit" value="Submit">
+            <a href="/map"><input id='submitButt' type="submit" value="Submit"></a>
           </form>
         </section>
-        <section id="about">About Page Coming SOON!!</section>
+        <section id="about">
+          <h1>Meet The Team</h1>
+          <div id="picsContainer">
+            <div class="pics"></div>
+            <div class="pics"></div>
+            <div class="pics"></div>
+          </div>
+          <button id="closeAbout">CLOSE</button>
+        </section>
 
         <section id="postgresData"></section>
 
@@ -67,24 +80,18 @@
           <p>This is a paragraph.</p>
           <button>Toggle slideUp() and slideDown()</button>
         </section>
+
         <!-- copied from practice file -->
         <div id="texttop">
           <h1 class="title">-WELCOME TO SEATTLE-</h1>
           <p class="intro">This is an app that will guide tourists to their desired locations; from iconic viewpoints (ideal for photos) to outdoor activities and city events.  Apptivities will offer suggestions for how to move about the city from bicycle rentals and bus schedules (one bus away app), to light rails and water taxis to Alki Beach.</p>
         </div>
-
-       </main>
-
-
   <!-- <section id="map-data-wrapper"> -->
-
   </body>
 </main>
-
       <!-- <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script> -->
       <script src="scripts/jquery-2.1.4.js" charset="utf-8"></script>
   <script src="scripts/page.js"></script>
-
   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
   <script src="scripts/map.js" charset="utf-8"></script>
   <script src="scripts/poi.js" charset="utf-8"></script>

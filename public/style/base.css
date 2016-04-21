@@ -1,3 +1,18 @@
+#picsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  background-color: lightblue;
+  height: 35em;
+}
+.pics {
+  justify-content: space-around;
+  width: 14em;
+  height: 14em;
+  background-color: red;
+  margin: .5em;
+}
 nav {
   display: flex;
   justify-content: space-around;
@@ -8,31 +23,31 @@ nav {
 }
 a {
   font-size: xx-large;
-}
-.welcome {
-  background-color: lavender;
-  margin-left: 20%;
-  margin-right: 20%;
+  text-decoration: none;
+  margin: 1em;
 }
 #placesTemplate{
+  display: inline-block;
+  overflow-x: scroll;
+  overflow-y: scroll;
   float:right;
+  height: 40em;
   width:35%;
   background-color: lightblue;
 }
 div#texttop {
-  color: blue;
+  background-color: beige;
+  color: beige;
   margin-top: 1%;
   padding: 1rem;
   font-family: sans-serif;
 }
 body {
   margin: 0em;
-  background-size: cover;
-  /*background-color: beige;*/
-  /*background: url("/images/seattle-background-resize.jpg")no-repeat center top ;*/
-  background-attachment: fixed;
+  background-color: beige;
+  /*background-size: cover;
+  background-attachment: fixed;*/
   min-height: 100vh;
-  /*height: 100%;*/
 }
 h1 {
   margin-top: 0;
@@ -45,73 +60,148 @@ h2 {
   font-size: 3em;
   color: brown;
 }
-
-
-.dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: .5em;
-    font-size: 3em;
-    border: none;
-    cursor: pointer;
-    min-width: 18.4em;
+.welcome {
+  background-color: lavender;
+  margin-left: 20%;
+  margin-right: 20%;
 }
-.dropdown {
-    position: relative;
-    display: inline-block;
+#initForm {
+  /*width: 90em;
+  height: 90em;*/
+  background-color: lightgreen;
+  width: 55em;
 }
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 55em;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+#homeDiv {
+  background-color: orange;
+  width: 100%;
+  height: 100%;
 }
-.dropdown-content a {
-    color: black;
-    padding: 1.5em 2em;
-    text-decoration: none;
-    display: block;
+#about {
+  background-color: orange;
+  width: 100%;
+  height: 100%;
 }
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
+#submitButt {
+text-align: center;
+margin-left: 2em;
+margin-right: 2em;
+margin-bottom: 1.25em;
+border-radius: .65em;
+background-color: #B4BBCC;
+box-shadow: 0em .25em .25em .25em #1B1B25;
 }
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+.intro {
+  color: black;
 }
 
 
-@media (min-width: 767px) {
-  body {
-    padding: 3em;
-  }
-  /*.dropbtn {
-    margin-left: 3em;
-  }
-  .dropdown-content {
-    margin-left: 9em;
-  }*/
 
 ul li {
   display: inline-block;
 }
 
+<<<<<<< HEAD
 
  #placesTemplate,#Toggle{
    float:right;
+=======
+ #placesTemplate{
+   /*float:right;*/
+>>>>>>> 4a5f1fca0f46cc5db93c11b4f33d11cd57e6c938
    width:33%;
    display:inline-block;
+   height: 100%;
  }
 
 #map-data-wrapper{
   display:inline-block;
 }
 
+<<<<<<< HEAD
 /*//Removeeeeee*/
 #Toggle{
   float:right;
+=======
+#primary_nav_wrap
+{
+	margin-top:15px
+}
+
+#primary_nav_wrap ul
+{
+	list-style:none;
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0
+}
+
+#primary_nav_wrap ul
+{
+	display:block;
+	color:#333;
+	text-decoration:none;
+	font-weight:700;
+	font-size:12px;
+	line-height:32px;
+	padding:0 15px;
+	font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
+#primary_nav_wrap ul li
+{
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0
+}
+
+#primary_nav_wrap ul li.current-menu-item
+{
+	background:#ddd
+}
+
+#primary_nav_wrap ul li:hover
+{
+	background:#f6f6f6
+}
+
+#primary_nav_wrap ul ul
+{
+	display:none;
+	position:absolute;
+	top:100%;
+	left:0;
+	background:#fff;
+	padding:0
+}
+
+#primary_nav_wrap ul ul li
+{
+	float:none;
+	width:200px
+}
+
+#primary_nav_wrap ul ul
+{
+	line-height:120%;
+	padding:10px 15px
+}
+
+#primary_nav_wrap ul ul ul
+{
+	top:0;
+	left:100%
+}
+
+#primary_nav_wrap ul li:hover > ul
+{
+	display:block
+}
+
+@media (min-width: 767px) {
+  body {
+    padding: 3em;
+  }
+>>>>>>> 4a5f1fca0f46cc5db93c11b4f33d11cd57e6c938
 }
