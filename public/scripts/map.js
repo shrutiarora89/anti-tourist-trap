@@ -32,7 +32,10 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
 // polygon.bindPopup("I am a polygon.");
 
 // Accessing the Place Constructor from IIFE poi.js;
+var pointsOnMap = new L.FeatureGroup();
+
 mapCoordinates.addPlacesToMap = function(){
+
   filterer.filteredResults.forEach(function(a){
     console.log(a);
     if (a["lat-long"]) {
@@ -40,8 +43,10 @@ mapCoordinates.addPlacesToMap = function(){
       var long = a["lat-long"].trim().split(",")[1];
       var marker = L.marker([lat,long]).addTo(map);
       marker.bindPopup(a.name);
+      pointsOnMap.addLayer(marker)
     }
   });
+  map.addLayer(pointsOnMap);
 }
 
 //Removeeeeee
