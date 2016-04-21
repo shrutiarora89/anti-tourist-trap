@@ -1,4 +1,7 @@
 // initialize the map
+//the code below is to prevent accidental zooming when scrolling
+// var map = L.map('map',{scrollWheelZoom:false}).setView([47.6062, -122.3321], 15);
+
 var map = L.map('map').setView([47.495, -122.805], 13);
 // load a tile layer
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
