@@ -16,7 +16,7 @@ $('#submitButt').on("click", function(e){ //this handles the checkboxes and plac
   })
 
   filterer.places = function () { //this handles the actual filtering of our data
-    filterer.filteredResults = arrayOfplaces.filter( function(ele){
+    filterer.filteredResults = Place.all.filter( function(ele){
       var result = false
       for(c in ele.category){ //does this once for each string in the .category []
         if (filterer.preferances.indexOf(ele.category[c]) > -1){

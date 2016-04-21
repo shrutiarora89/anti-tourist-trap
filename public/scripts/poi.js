@@ -26,7 +26,7 @@ Place.prototype.toHtml = function() {
    $newPlace.find('#location').html(this.Address);
    $newPlace.find('#description').html(this.description);
    $newPlace.find('#hoursOfOperation').html(this.HoursOfOperation);
-   $newPlace.find('#data-category').html(this.category);
+   $newPlace.find('#category').html(this.category);
    $newPlace.find('#picture').html(this.picture);
    $newPlace.find('#Lat_Long').html(this.lat_long);
    return $newPlace;
@@ -49,7 +49,7 @@ Place.fetchAll = function(){
       // console.log(place.toHtml().html());
     }); // closing result.forEach
 // ----------------------------------------
-    console.log(result);
+    // console.log(result);
     // insantiating new objects
 
   }).done(function() {
