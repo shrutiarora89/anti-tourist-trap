@@ -24,9 +24,9 @@ Place.prototype.toHtml = function() {
    return $newPlace;
  };
 
-Place.prototype.render = function() {
-  $('#placesTemplate').append(this.toHtml());
-}
+// Place.prototype.render = function() {
+//   $('#placesTemplate').append(this.toHtml());
+// }
 
 Place.fetchAll = function(){
 // ----------------------------------------
@@ -39,18 +39,16 @@ Place.fetchAll = function(){
       // console.log(Place.lat_long);
       // console.log(place.toHtml().html());
     }); // closing result.forEach
-    // I have got the result from server
-    // and have added to all array.
-    // Now I want to add the places on the map
 
     mapCoordinates.addPlacesToMap();
 // ----------------------------------------
     // insantiating new objects
-  }).done(function() {
-    Place.all.forEach(function(ele) {
-      ele.render();
-    })
-  }) // closing getJSON
+  }); // closing getJSON
+//   .done(function() {
+//     Place.all.forEach(function(ele) {
+//       ele.render();
+//     })
+  // })
 }; //closing fetchAll
 
 Place.fetchAll();

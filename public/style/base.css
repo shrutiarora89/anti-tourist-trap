@@ -3,12 +3,12 @@ ul li {
   display: inline-block;
 }
 
-
- #placesTemplate,#Toggle{
+/*
+ #placesTemplate{
    float:right;
    width:33%;
    display:inline-block;
- }
+ }*/
 
 #map-data-wrapper{
   display:inline-block;
