@@ -100,14 +100,9 @@ ul li {
   display: inline-block;
 }
 
-<<<<<<< HEAD
 
  #placesTemplate,#Toggle{
    float:right;
-=======
- #placesTemplate{
-   /*float:right;*/
->>>>>>> 4a5f1fca0f46cc5db93c11b4f33d11cd57e6c938
    width:33%;
    display:inline-block;
    height: 100%;
@@ -117,11 +112,10 @@ ul li {
   display:inline-block;
 }
 
-<<<<<<< HEAD
+
 /*//Removeeeeee*/
 #Toggle{
   float:right;
-=======
 #primary_nav_wrap
 {
 	margin-top:15px
@@ -203,5 +197,5 @@ ul li {
   body {
     padding: 3em;
   }
->>>>>>> 4a5f1fca0f46cc5db93c11b4f33d11cd57e6c938
+
 }
