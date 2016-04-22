@@ -16,13 +16,11 @@
     <main>
       <nav id="primary_nav_wrap">
           <ul>
-            <li><a href="/home">Home</a>
-              <ul>
-              </ul>
+            <li><a href="/home" class="navItem">Home</a>
             </li>
-            <li><a href="/map">Map</a>
+            <li><a href="/map" class="navItem">Map</a>
             </li>
-            <li><a href="/about">About</a>
+            <li><a href="/about" class="navItem">About</a>
             </li>
         </ul>
       </nav>
@@ -40,34 +38,33 @@
               <input type="checkbox" id="inputoddity" class="input" name="oddities" value="oddities"> Local Oddities <br>
               <input type="checkbox" id="inputmuseum" class="input" name="museum" value="museum" checked> Museum<br>
               <input type="checkbox" id="inputtours" class="input" name="tours" value="tours" checked> Tours<br>
-              <input type="checkbox" id="inputrental" class="input" name="rental" value="rental" checked> Bike and Watercraft Rentals<br>
+              <input type="checkbox" id="inputrental" class="input" name="rental" value="rental" checked> Bike &amp; Watercraft Rentals<br>
               <input type="checkbox" id="inputviewpoint" class="input" name="viewpoint" value="viewpoint" checked> Viewpoints and Lookouts<br>
-              <a href="/map"><input id='submitButt' type="submit" value="Submit"></a>
+              <a href="/map" id="submit"><input id='submitButt' type="submit" value="Submit"></a>
             </form>
           </section>
         </div>
       </section>
 
       <section id="about">
-          <h1>Meet The Team</h1>
+          <h1 id="meetTheTeam">Meet The Team</h1>
         <div id="picsContainer">
           <div class="pics">
-            <img class="headshot" src= >
+            <img id="shruti" src="images/shruti-resize.png">
             <h2>Shruti Arora</h2>
             <p></p>
           </div>
           <div class="pics">
-            <img class="headshot" src= >
+            <img id="ron" src="images/FullSizeRender.jpg">
             <h2>Ron Dunphy</h2>
             <p></p>
           </div>
           <div class="pics">
-            <img class="headshot" src= >
+            <img id="sam" src="images/sam.png">
             <h2>Sam Nortz</h2>
             <p></p>
           </div>
         </div>
-          <button id="closeAbout">CLOSE</button>
       </section>
 
       <section id="postgresData"></section>

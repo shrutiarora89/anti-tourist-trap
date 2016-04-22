@@ -1,7 +1,7 @@
 /*Remove to see the map*/
 #map {
   height: 100%;
-  width:99%;
+  width:95%;
   display: inline-block;
 }
 
@@ -13,5 +13,5 @@ tr{
   display: inline-block;
 }*/
 table{
-  width:90%;
+  width:70%;
 }
