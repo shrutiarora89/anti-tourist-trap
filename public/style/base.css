@@ -100,8 +100,9 @@ ul li {
   display: inline-block;
 }
 
- #placesTemplate{
-   /*float:right;*/
+
+ #placesTemplate,#Toggle{
+   float:right;
    width:33%;
    display:inline-block;
    height: 100%;
@@ -111,6 +112,10 @@ ul li {
   display:inline-block;
 }
 
+
+/*//Removeeeeee*/
+#Toggle{
+  float:right;
 #primary_nav_wrap
 {
 	margin-top:15px
@@ -192,4 +197,5 @@ ul li {
   body {
     padding: 3em;
   }
+
 }

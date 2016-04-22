@@ -13,15 +13,16 @@ $('#submitButt').on("click", function(e){ //this handles the checkboxes and plac
   }); // adds the value of each box with a check into .preferances
   console.log("filterP= " + filterer.preferances);
   filterer.places();
+  mapCoordinates.addPlacesToMap();
   })
 
   filterer.places = function () { //this handles the actual filtering of our data
-    filterer.filteredResults = arrayOfplaces.filter( function(ele){
+    filterer.filteredResults = Place.all.filter( function(ele){
       var result = false
       for(c in ele.category){ //does this once for each string in the .category []
         if (filterer.preferances.indexOf(ele.category[c]) > -1){
           result = true
-        } // function filters through the user preferances and returns TRUE when the one of the currect objects categorys match and thus adds it to .filteredResults
+        } // function filters through the user preferances and returns TRUE when the one of the currect objects categorys match a preferance and thus adds it to .filteredResults
       }
       return result;
     })

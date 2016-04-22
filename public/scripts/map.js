@@ -1,5 +1,8 @@
+(function(module) {
+
+mapCoordinates ={}
 // initialize the map
-var map = L.map('map').setView([47.495, -122.805], 13);
+var map = L.map('map').setView([47.6111, -122.3197], 11);
 // load a tile layer
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
   {
@@ -8,48 +11,76 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
     minZoom: 9
   }).addTo(map);
 //------------------------------------------------------------------
-// / I was trying to make a for loop. I want to keep it for future reference.
 
-// var markerArray=[47.6204,-122.3491,47.922028,-122.290149,47.620816,-122.350487];
-// L.marker([i]).addTo(map);
-// for (var i=0;i < markerArray.length;i++){
-// }
+// var markerSN = L.marker([47.6204,-122.3491]).addTo(map);
+// markerSN.bindPopup("<b>Space_Needle!</b><br>I am a popup.").openPopup();
 
-var markerSN = L.marker([47.6204,-122.3491]).addTo(map);
-var markerBT = L.marker([47.922028,-122.290149]).addTo(map);
-var markerCG = L.marker([47.620816,-122.350487]).addTo(map);
-var markerOSP = L.marker([47.616758,-122.355530]).addTo(map);
-var markerPPM = L.marker([47.609664,-122.341974]).addTo(map);
-var markerSA = L.marker([47.607633,-122.343021]).addTo(map);
-var markerSAM = L.marker([47.607435,-122.338148]).addTo(map);
-var markerSGW = L.marker([47.606352,-122.342474]).addTo(map);
-var markerSF = L.marker([47.543284,-121.837788]).addTo(map);
-var markerFT = L.marker([47.651272,-122.347333]).addTo(map);
+// // Circle and Polygon
+// var circle = L.circle([47.6510,-122.3473], 500, {
+//   color: 'red',
+//   fillColor: '#f03',
+//   fillOpacity: 0.5
+// }).addTo(map);
+//
+// var polygon = L.polygon([
+//   [47.6204,-122.3491],
+//   [47.922028,-122.290149],
+//   [47.609664,-122.341974]
+// ]).addTo(map);
 
-markerSN.bindPopup("<b>Space_Needle!</b><br>I am a popup.").openPopup();
-markerBT.bindPopup("<b>Boeing Tour!</b><br>I am a popup.").openPopup();
-markerCG.bindPopup("<b>Chihuly Garden!</b><br>I am a popup.").openPopup();
-markerOSP.bindPopup("<b>Olympic Sculpture Park!</b><br>I am a popup.").openPopup();
-markerPPM.bindPopup("<b>Pike Place Market!</b><br>I am a popup.").openPopup();
-markerSA.bindPopup("<b>Seattle Aquarium!</b><br>I am a popup.").openPopup();
-markerSAM.bindPopup("<b>Seattle Art Museum!</b><br>I am a popup.").openPopup();
-markerSGW.bindPopup("<b>Seattle Great Wheel!</b><br>I am a popup.").openPopup();
-markerSF.bindPopup("<b>Snoqualmine Falls!</b><br>I am a popup.").openPopup();
-markerFT.bindPopup("<b>Fremont Troll!</b><br>I am a popup.").openPopup();
+// circle.bindPopup("Fremont_Troll.");
+// polygon.bindPopup("I am a polygon.");
 
-// Circle and Polygon
-var circle = L.circle([47.6510,-122.3473], 500, {
-  color: 'red',
-  fillColor: '#f03',
-  fillOpacity: 0.5
-}).addTo(map);
+// Accessing the Place Constructor from IIFE poi.js;
+var pointsOnMap = new L.FeatureGroup();
 
-var polygon = L.polygon([
-  [47.6204,-122.3491],
-  [47.922028,-122.290149],
-  [47.609664,-122.341974]
-]).addTo(map);
+mapCoordinates.addPlacesToMap = function(){
+  pointsOnMap.clearLayers();
+  filterer.filteredResults.forEach(function(a){
+    console.log(a);
+    if (a["lat-long"]) {
+      var lat = a["lat-long"].trim().split(",")[0]
+      var long = a["lat-long"].trim().split(",")[1];
+      var marker = L.marker([lat,long]).addTo(map);
+      marker.bindPopup(a.name);
+      pointsOnMap.addLayer(marker)
+    }
+  });
+  map.addLayer(pointsOnMap);
+}
 
-circle.bindPopup("Fremont_Troll.");
-polygon.bindPopup("I am a polygon.");
-// // -----------------------------------------------------------------
+//Removeeeeee
+// $(document).ready(function(){
+//     $("button").click(function(){
+//         $("p").slideToggle();
+//     });
+// });
+
+$(document).ready(function(){
+    $("leaflet-marker-icon leaflet-zoom-animated leaflet-clickable").click(function(){
+        $("p").slideToggle();
+    });
+});
+
+ module.mapCoordinates= mapCoordinates;
+ })(window);
+
+
+
+
+
+
+
+ // $.getJSON('/data', function (result) {
+ // var f = result.filter(function(row){
+ //  return row.lat-long;
+ //  console.log(row.lat-long);
+ // })
+ // });
+
+ // debugger;
+ // $.getJSON('/data', function (result) {
+ // var f = result.filter(function(row){
+ //  return row.category === "architecture";
+ // })
+ // });

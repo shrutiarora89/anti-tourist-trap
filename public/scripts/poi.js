@@ -1,24 +1,16 @@
-// (function(module) {
+(function(module) {
 
 function Place (opts) {
   Object.keys(opts).forEach(function(e, index, keys) {
       this[e] = opts[e];
-    },this);
-  // this.name = opts.name;
-  // this.url = opts.url;
-  // this.location = opts.location;
-  // this.description = opts.description;
-  // this.hoursOfOperation = opts.hoursOfOperation;
-  // this.category = opts.category;
-  // this.picture = opts.picture;
-  // this.Lat_Long = opts.Lat_Long;
+    }, this);
 }
 
 //Array for place
 Place.all = [];
 
 Place.prototype.toHtml = function() {
-  console.dir(this);
+  // console.dir(this);
    var $newPlace = $('.table-template').clone();
    $newPlace.removeClass('table-template');
    $newPlace.find('#name').html(this.name);
@@ -26,9 +18,9 @@ Place.prototype.toHtml = function() {
    $newPlace.find('#location').html(this.Address);
    $newPlace.find('#description').html(this.description);
    $newPlace.find('#hoursOfOperation').html(this.HoursOfOperation);
-   $newPlace.find('#data-category').html(this.category);
+   $newPlace.find('#category').html(this.category);
    $newPlace.find('#picture').html(this.picture);
-   $newPlace.find('#Lat_Long').html(this.lat_long);
+   $newPlace.find('#lat_long').html(this.lat_long);
    return $newPlace;
  };
 
@@ -38,20 +30,27 @@ Place.prototype.render = function() {
 
 Place.fetchAll = function(){
 // ----------------------------------------
-//Getting data from the server, passing as a parameter result and going thro each item
-// aand insantiating new objects
   $.getJSON('/data', function (result) {
+    console.log(result)
     result.forEach(function(item) {
+      if (item.category){
+        item.category = JSON.parse(item.category)
+      }
       var place = new Place(item);
-      console.log('$$$$$$$111')
       Place.all.push(place);
-      //appends all the insantiated objects in the HTML
+      // console.log(place);
+      // console.log(Place.lat_long);
       // console.log(place.toHtml().html());
     }); // closing result.forEach
-// ----------------------------------------
-    console.log(result);
-    // insantiating new objects
+    // I have got the result from server
+    // and have added to all array.
+    // Now I want to add the places on the map
 
+
+// ----------------------------------------
+    // console.log(result);
+
+    // insantiating new objects
   }).done(function() {
     Place.all.forEach(function(ele) {
       ele.render();
@@ -60,6 +59,12 @@ Place.fetchAll = function(){
 }; //closing fetchAll
 
 Place.fetchAll();
+module.Place = Place;
+})(window);
+
+
+
+
 
 // var bgImageArray = ["../images/pug.jpeg", "../images/pikePlaceMarket.png", "../images/seattle-background-resize.jpg"]
 // secs = 4;
@@ -96,3 +101,13 @@ Place.fetchAll();
 //    console.log(result);
 //    console.log(f);
 //   });
+
+
+// this.name = opts.name;
+// this.url = opts.url;
+// this.location = opts.location;
+// this.description = opts.description;
+// this.hoursOfOperation = opts.hoursOfOperation;
+// this.category = opts.category;
+// this.picture = opts.picture;
+// this.Lat_Long = opts.Lat_Long;

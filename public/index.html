@@ -8,12 +8,11 @@
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
     <link rel="stylesheet" href="style/leaflet.css">
     <link rel="stylesheet" href="style/base.css">
+    <script src="vendors/handlebars.js"></script>
+
   </head>
-
     <body>
-
       <main>
-
             <nav id="primary_nav_wrap">
                 <ul>
                   <li><a href="/home">Home</a>
@@ -29,24 +28,24 @@
         <section id="map">Map Section
           <!-- <div id="mapDiv"></div> -->
         </section>
-
         <section id="homeDiv">
 
           <div id="texttop">
             <h1 class="title">-WELCOME TO SEATTLE-</h1>
             <h1 class="intro">This is an app that will guide visitors to their desired locations; from iconic viewpoints (ideal for photos), to outdoor activities. </h1>
+            <section id="home">
+              <form id="initForm" class="page" >
+                <input type="checkbox" id="inputPOI" class="input" name="art" value="art" checked> Local Art<br>
+                <input type="checkbox" id="inputarchitectural" class="input" name="architecture" value="architecture"> Architectural<br>
+                <input type="checkbox" id="inputnatural" class="input" name="nature" value="nature"> Natural <br>
+                <input type="checkbox" id="inputoddity" class="input" name="oddities" value="oddities"> Local oddities <br>
+                <input type="checkbox" id="inputmuseum" class="input" name="museum" value="museum" checked> Museum<br>
+                <input type="checkbox" id="inputtours" class="input" name="tours" value="tours" checked> tours<br>
+                <input type="checkbox" id="inputviewpoint" class="input" name="viewpoint" value="viewpoint" checked> Viewpoints and Lookouts<br>
+                <a href="/map"><input id='submitButt' type="submit" value="Submit"></a>
+              </form>
+            </section>
           </div>
-
-          <form id="initForm" class="page" >
-            <input type="checkbox" id="inputPOI" class="input" name="art" value="art" checked> Local Art<br>
-            <input type="checkbox" id="inputarchitectural" class="input" name="architecture" value="architecture"> Architectural<br>
-            <input type="checkbox" id="inputnatural" class="input" name="nature" value="nature"> Natural <br>
-            <input type="checkbox" id="inputoddity" class="input" name="oddities" value="oddities"> Local oddities <br>
-            <input type="checkbox" id="inputmuseum" class="input" name="museum" value="museum" checked> Museum<br>
-            <input type="checkbox" id="inputtours" class="input" name="tours" value="tours" checked> tours<br>
-            <input type="checkbox" id="inputviewpoint" class="input" name="viewpoint" value="viewpoint" checked> Viewpoints and Lookouts<br>
-            <a href="/map"><input id='submitButt' type="submit" value="Submit"></a>
-          </form>
         </section>
         <section id="about">
           <h1>Meet The Team</h1>
@@ -59,32 +58,42 @@
         </section>
 
         <section id="postgresData"></section>
+
+        <section id="map">Map Section</section>
         <section id="placesTemplate">
-             <article class="table-template" data-category="cat">
-                  <header>
-                       <!--Name: url location: description: hoursOfOperation: picture:-->
-                         <h1 id="name"></h1>
-                         <p id="location"></p>
-                         <p id="description"></p>
-                         <p id="hoursOfOperation"></p>
-                         <p id="data-category"></p>
-                         <p id="url"></p>
-                         <p id="picture"></p>
-                  </header>
-              </article>
+          <article class="table-template" data-category="cat">
+            <!--Name: url location: description: hoursOfOperation: picture:-->
+            <h1 id="name"></h1>
+            <p id="location"></p>
+            <p id="description"></p>
+            <p id="hoursOfOperation"></p>
+            <p id="category"></p>
+            <p id="url"></p>
+            <p id="picture"></p>
+            <p id="lat_long"></p>
+          </article>
         </section>
-       </main>
+        <!-- </section> -->
 
-       <script src="scripts/jquery-2.1.4.js" charset="utf-8"></script>
-       <script src="scripts/page.js"></script>
+        <!-- //Removeeeeee -->
+        <section id=Toggle>
+          <p>This is a paragraph.</p>
+          <button>Toggle slideUp() and slideDown()</button>
+        </section>
+  <!-- <section id="map-data-wrapper"> -->
+  </body>
+</main>
+      <!-- <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script> -->
+      <script src="scripts/jquery-2.1.4.js" charset="utf-8"></script>
+  <script src="scripts/page.js"></script>
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  <script src="scripts/map.js" charset="utf-8"></script>
+  <script src="scripts/poi.js" charset="utf-8"></script>
+  <script src="scripts/homeController.js"></script>
+  <script src="scripts/mapNdataController.js"></script>
+  <script src="scripts/aboutController.js"></script>
+  <script src="scripts/filterer.js"></script>
+  <script src="scripts/routes.js"></script>
 
-       <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-       <script src="scripts/map.js" charset="utf-8"></script>
-       <script src="scripts/poi.js" charset="utf-8"></script>
-       <script src="scripts/homeController.js"></script>
-       <script src="scripts/mapNdataController.js"></script>
-       <script src="scripts/aboutController.js"></script>
-       <script src="scripts/routes.js"></script>
-
-     </body>
-   </html>
+ </body>
+</html>
