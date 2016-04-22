@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('#homeDiv').hide();
+  $('#homeDiv').show();
 });
 
 (function(module) {

@@ -2,7 +2,7 @@
 
 mapCoordinates ={}
 // initialize the map
-var map = L.map('map').setView([47.495, -122.805], 13);
+var map = L.map('map').setView([47.6111, -122.3197], 11);
 // load a tile layer
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
   {
@@ -35,7 +35,7 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
 var pointsOnMap = new L.FeatureGroup();
 
 mapCoordinates.addPlacesToMap = function(){
-
+  pointsOnMap.clearLayers();
   filterer.filteredResults.forEach(function(a){
     console.log(a);
     if (a["lat-long"]) {
