@@ -41,6 +41,10 @@ app.get('/data', function (req, res) {
 // app.get('/home',function(req,res){
 //   res.status(200);
 // })
+app.get('*', function(request, response) {
+  console.log('New request:', request.url);
+  response.sendFile('public/index.html', { root: '.' });
+});
 
 app.listen(3003, function () {
   console.log('Example app listening on port 3003!');
