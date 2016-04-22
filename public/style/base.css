@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin-left: 2em;
   width: 100%;
   height: 100%;
 }
@@ -13,7 +14,7 @@
   margin: .5em;
 }
 main {
-  width: 70em;
+  width: 77.75em;
 }
 nav {
   display: flex;
@@ -22,6 +23,7 @@ nav {
   background-color: lavender;
   height: 8em;
   width: 73em;
+  border-radius: .5em;
   border: .5em double rgba(255,255,255,0.3);
 }
 .navItem {
@@ -30,15 +32,17 @@ nav {
 a {
   text-decoration: none;
   margin: 2em;
+  font-weight: bolder;
 }
 body {
   margin: 0em;
   min-height: 100vh;
 }
 #meetTheTeam {
-  font-size: 5em;
+  font-size: 9em;
 }
 h1 {
+  margin-right: .5em;
   font-size: 2.25em;
   margin-top: 0;
   text-align: center;
@@ -99,7 +103,6 @@ ul li {
   background-color: lightblue;
 }
 div#texttop {
-  /*background-color: yellow;*/
   color: beige;
   margin-top: 1%;
   padding: 1rem;
@@ -108,22 +111,22 @@ div#texttop {
   height: 10em;
 }
 #initForm {
+  color: white;
   width: 13em;
   font-size: 6em;
 }
 #homeDiv {
-  /*background-color: orange;*/
   width: 80em;
   height: 100%;
 }
 #about {
-  /*background-color: orange;*/
   width: 100%;
   height: 100%;
 }
 #submitButt {
+  padding: .1em;
   margin-top: 1em;
-  margin-left: 2.5em;
+  margin-left: 2.4em;
   text-align: center;
   border-radius: .25em;
   background-color: #B4BBCC;
@@ -211,6 +214,6 @@ div#texttop {
 @media (min-width: 767px) {
   body {
     padding: 3em;
+    margin-top: 5em;
   }
-
 }
