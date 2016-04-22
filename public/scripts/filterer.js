@@ -14,6 +14,7 @@ $('#submitButt').on("click", function(e){ //this handles the checkboxes and plac
   console.log("filterP= " + filterer.preferances);
   filterer.places();
   mapCoordinates.addPlacesToMap();
+  page('/map');
   })
 
   filterer.places = function () { //this handles the actual filtering of our data
