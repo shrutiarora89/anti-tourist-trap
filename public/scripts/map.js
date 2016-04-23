@@ -2,7 +2,7 @@
 
 mapCoordinates ={}
 // initialize the map
-var map = L.map('map').setView([47.6111, -122.3197], 11);
+var map = L.map('map').setView([47.6204,-122.3491], 13);
 // load a tile layer
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
   {
@@ -12,71 +12,35 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
   }).addTo(map);
 //------------------------------------------------------------------
 
-// var markerSN = L.marker([47.6204,-122.3491]).addTo(map);
-// markerSN.bindPopup("<b>Space_Needle!</b><br>I am a popup.").openPopup();
-
-// // Circle and Polygon
-// var circle = L.circle([47.6510,-122.3473], 500, {
-//   color: 'red',
-//   fillColor: '#f03',
-//   fillOpacity: 0.5
-// }).addTo(map);
-//
-// var polygon = L.polygon([
-//   [47.6204,-122.3491],
-//   [47.922028,-122.290149],
-//   [47.609664,-122.341974]
-// ]).addTo(map);
-
-// circle.bindPopup("Fremont_Troll.");
-// polygon.bindPopup("I am a polygon.");
-
 // Accessing the Place Constructor from IIFE poi.js;
-var pointsOnMap = new L.FeatureGroup();
-
 mapCoordinates.addPlacesToMap = function(){
-  pointsOnMap.clearLayers();
-  filterer.filteredResults.forEach(function(a){
+  //accessing the Place.all Array -
+  Place.all.forEach(function(a){
     console.log(a);
+    //accessing the lat-long property of the Object
     if (a["lat-long"]) {
+      //Getting a string back ["lat,long"]
+      //Trimming it the string to get lat and long
       var lat = a["lat-long"].trim().split(",")[0]
       var long = a["lat-long"].trim().split(",")[1];
+//assigning the lat and long
       var marker = L.marker([lat,long]).addTo(map);
-      marker.bindPopup(a.name);
-      pointsOnMap.addLayer(marker)
+
+      // PopUp of the Constructor properties- address,name,description.
+      marker.bindPopup("<b>Place: </b>"+ a.name +
+      "<br> <b>Address: </b>"+ a.Address +
+      "<br> <b>Description: </b>"+ a.description+
+      "<br> <b>Website: </b>"+ '<a href="' + a.url + '">Open here</a>'+
+      "<br> <b>Photo: </b>"+ '<img src="' + a.picture + '"/>');
     }
   });
-  map.addLayer(pointsOnMap);
 }
-
-//Removeeeeee
-// $(document).ready(function(){
-//     $("button").click(function(){
-//         $("p").slideToggle();
-//     });
-// });
-
-$(document).ready(function(){
-    $("leaflet-marker-icon leaflet-zoom-animated leaflet-clickable").click(function(){
-        $("p").slideToggle();
-    });
-});
-
  module.mapCoordinates= mapCoordinates;
  })(window);
-
-
-
-
-
-
-
- // $.getJSON('/data', function (result) {
- // var f = result.filter(function(row){
- //  return row.lat-long;
- //  console.log(row.lat-long);
- // })
+ // mapCoordinates.MarkerLinkedToData = function(){
  // });
+
+
 
  // debugger;
  // $.getJSON('/data', function (result) {
@@ -84,3 +48,19 @@ $(document).ready(function(){
  //  return row.category === "architecture";
  // })
  // });
+
+ // Circle and Polygon
+ // var circle = L.circle([47.6510,-122.3473], 500, {
+ //   color: 'red',
+ //   fillColor: '#f03',
+ //   fillOpacity: 0.5
+ // }).addTo(map);
+
+ // var polygon = L.polygon([
+ //   [47.6204,-122.3491],
+ //   [47.922028,-122.290149],
+ //   [47.609664,-122.341974]
+ // ]).addTo(map);
+
+ // circle.bindPopup("Fremont_Troll.");
+ // polygon.bindPopup("I am a polygon.");
