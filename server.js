@@ -6,6 +6,7 @@
 var express = require('express');
 //Creating a new client(pg client)
 var pg = require('pg');
+var port = process.env.PORT || 3003;
 
 //express package -made app object
 var app = express();
@@ -18,7 +19,7 @@ app.use(express.static(__dirname + '/public'));
 //Getting the dynamic files
 app.get('/data', function (req, res) {
 
-  var connectionString = process.env.ELEPHANTSQL_URL || "postgres://athgnzme:Kh_Qvt4UuT3dG9Vq1MyD2tXWwErV1Ll9@pellefant.db.elephantsql.com:5432/athgnzme";
+  var connectionString = process.env.ELEPHANTSQL_URL;
   var client = new pg.Client(connectionString);
   // connect to the PG client
   client.connect(function(err) {
@@ -46,6 +47,6 @@ app.get('*', function(request, response) {
   response.sendFile('public/index.html', { root: '.' });
 });
 
-app.listen(3003, function () {
+app.listen(port, function () {
   console.log('Example app listening on port 3003!');
 });
