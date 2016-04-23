@@ -12,6 +12,7 @@
       filterer.preferances.push($(this).val())
     }); // adds the value of each box with a check into .preferances
     console.log("filterP= " + filterer.preferances);
+
     if (filterer.preferances.length === 0){
       homeController.index();
       $("#warning").show();
