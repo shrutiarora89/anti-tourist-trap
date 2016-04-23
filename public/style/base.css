@@ -48,6 +48,7 @@ a {
 body {
   margin: 0em;
   min-height: 100vh;
+  width: 74em;
 }
 #meetTheTeam {
   font-size: 9em;
@@ -131,7 +132,7 @@ div#texttop {
   text-align: center;
   border-radius: .25em;
   background-color: #B4BBCC;
-  box-shadow: 0em .25em .25em .25em #1B1B25;
+  box-shadow: 0em .05em .05em .05em #1B1B25;
 }
 #placesTemplate,#Toggle{
    float:right;
@@ -219,5 +220,8 @@ div#texttop {
   }
   #picsContainer {
     margin-top: 70em;
+  }
+  .title {
+    /*font-size: 4em;*/
   }
 }
