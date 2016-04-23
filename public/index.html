@@ -7,11 +7,13 @@
     <title>A Leaflet map!</title>
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> -->
     <link href='https://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+    <link rel="stylesheet" href="style/normalize.css">
     <link rel="stylesheet" href="style/leaflet.css">
     <link rel="stylesheet" href="style/base.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
     <script src="scripts/jquery-2.1.4.js" charset="utf-8"></script>
     <script src="vendors/handlebars.js"></script>
+
     <script src='https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet-src.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-icon.png"></script>
@@ -34,6 +36,10 @@
             </li>
         </ul>
       </nav>
+      <div id="warning">
+        <h1>WAIT A MINUTE!</h1>
+        <p>It seems you went right to the map before you told us what you are interested in. <br> Please got back to the <a href="/home" class="navItem">Home</a> page and fill out the form to see all the great things Seattle has to offer</p>
+      </div>
       <section id="map">Map Section
       </section>
       <section id="homeDiv">
@@ -41,6 +47,10 @@
           <h1 class="title">-WELCOME TO SEATTLE-</h1>
           <h1 class="intro">This is an app that will guide visitors to their desired locations; from iconic viewpoints (ideal for photos), to outdoor activities. </h1>
           <section id="home">
+            <div id="warning">
+              <h1>WAIT A MINUTE!</h1>
+              <p>It seems you went right to the map before you told us what you are interested in. <br> Please got back to the <a href="/home" class="navItem">Home</a> page and fill out the form to see all the great things Seattle has to offer.</p>
+            </div>
             <form id="initForm" class="page" >
               <input type="checkbox" id="inputPOI" class="input" name="art" value="art" checked> Local Art<br>
               <input type="checkbox" id="inputarchitectural" class="input" name="architecture" value="architecture"> Architectural<br>
@@ -50,12 +60,13 @@
               <input type="checkbox" id="inputtours" class="input" name="tours" value="tours" checked> Tours<br>
               <input type="checkbox" id="inputrental" class="input" name="rental" value="rental" checked> Bike &amp; Watercraft Rentals<br>
               <input type="checkbox" id="inputviewpoint" class="input" name="viewpoint" value="viewpoint" checked> Viewpoints and Lookouts<br>
-              <a href="/map" id="submit"><input id='submitButt' type="submit" value="Submit"></a>
+              <input type="checkbox" id="selectAll" class="input" name="selectAll" value="select">Sellect All<br>
+              <input id='submitButt' type="submit" value="Submit">
+              <br>
             </form>
           </section>
         </div>
       </section>
-
       <section id="about">
           <h1 id="meetTheTeam">Meet The Team</h1>
         <div id="picsContainer">
@@ -73,8 +84,8 @@
           </div>
         </div>
       </section>
-
       <section id="postgresData"></section>
+<<<<<<< HEAD
 
       </main>
       <script src="scripts/page.js"></script>
@@ -86,4 +97,20 @@
       <script src="scripts/filterer.js"></script>
       <script src="scripts/routes.js"></script>
     </body>
+=======
+    </main>
+    <script src="scripts/jquery-2.1.4.js" charset="utf-8"></script>
+    <script src="scripts/page.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script src="scripts/map.js" charset="utf-8"></script>
+    <script src="scripts/poi.js" charset="utf-8"></script>
+    <script src="scripts/homeController.js"></script>
+    <script src="scripts/mapNdataController.js"></script>
+    <script src="scripts/aboutController.js"></script>
+    <script src="scripts/filterer.js"></script>
+    <script src="scripts/select.js"></script>
+    <script src="scripts/routes.js"></script>
+  </body>
+
+>>>>>>> 00436a1c216214dfe3d3011de92436199d5bf554
 </html>

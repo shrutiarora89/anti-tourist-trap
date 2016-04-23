@@ -4,17 +4,17 @@
   filterer.preferances = [];
   filterer.filteredResults = [];
 
-$('#submitButt').on("click", function(e){ //this handles the checkboxes and places selected categories in to .preferances
-  e.preventDefault();
-  filterer.preferances = [];
-  filterer.filteredResults = [] //resests both arrays when clicked
-  $('#initForm :checked').each(function(){
-    filterer.preferances.push($(this).val())
-  }); // adds the value of each box with a check into .preferances
-  console.log("filterP= " + filterer.preferances);
-  filterer.places();
-  mapCoordinates.addPlacesToMap();
-  page('/map');
+  $('#submitButt').on("click", function(e){ //this handles the checkboxes and places selected categories in to .preferances
+    e.preventDefault();
+    filterer.preferances = [];
+    filterer.filteredResults = [] //resests both arrays when clicked
+    $('#initForm :checked').each(function(){
+      filterer.preferances.push($(this).val())
+    }); // adds the value of each box with a check into .preferances
+    console.log("filterP= " + filterer.preferances);
+    filterer.places();
+    mapCoordinates.addPlacesToMap();
+    page('/map');
   })
 
   filterer.places = function () { //this handles the actual filtering of our data
