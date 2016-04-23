@@ -32,7 +32,7 @@ app.get('/data', function (req, res) {
         return console.error('error running query', err);
         // res.send('error running query');
       }
-      res.json(result.rows)
+      res.send(result.rows)
       client.end();  //close the client connection
     });
   });
