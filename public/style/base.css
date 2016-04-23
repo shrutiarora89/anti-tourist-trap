@@ -97,10 +97,23 @@ ul li {
   width: 40em;
   height: 40em;
 }
-#warning {
+#warning  {
   display: none;
   z-index: 1;
+  border-width: medium;
+  border-color: red;
+}
+#warning h2 {
+  z-index: 1;
   padding: 1em;
+  color: red;
+}
+#warning p {
+  z-index: 1;
+  padding: 1em;
+  font-size: 1.15em;
+  border-width: medium;
+  border-color: red;
 }
 #placesTemplate{
   display: inline-block;
