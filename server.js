@@ -2,7 +2,7 @@
 //////////////////SERVER FILE///////////////////
 ////////////////////////////////////////////////
 ///////////////////SERVER FILE/////////////////
-var path = require('path');
+// var path = require('path');
 var express = require('express');
 //Creating a new client(pg client)
 var pg = require('pg');

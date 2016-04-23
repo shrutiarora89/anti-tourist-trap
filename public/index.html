@@ -3,10 +3,10 @@
 ////////////////////////////////////////////////
 ///////////////////CLIENT FILE///////////////// -->
 <html>
-
   <head>
     <title>A Leaflet map!</title>
     <link href='https://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+    <link rel="stylesheet" href="style/normalize.css">
     <link rel="stylesheet" href="style/leaflet.css">
     <link rel="stylesheet" href="style/base.css">
     <script src="vendors/handlebars.js"></script>
@@ -25,6 +25,10 @@
             </li>
         </ul>
       </nav>
+      <!-- <div id="warning">
+      <h1>WAIT A MINUTE!</h1>
+      <p>It seems you went right to the map before you told us what you are interested in. <br> Please got back to the <a href="/home" class="navItem">Home</a> page and fill out the form to see all the great things Seattle has to offer</p>
+    </div> -->
       <section id="map">Map Section
       </section>
       <section id="homeDiv">
@@ -45,20 +49,6 @@
             </form>
           </section>
         </div>
-      </section>
-
-      <section id="placesTemplate">
-           <article class="table-template" data-category="cat">
-                     <!--Name: url location: description: hoursOfOperation: picture:-->
-                       <h1 id="name"></h1>
-                       <p id="location"></p>
-                       <p id="description"></p>
-                       <p id="hoursOfOperation"></p>
-                       <p id="data-category"></p>
-                       <p id="url"></p>
-                       <p id="picture"></p>
-                       <p id="lat_long"></p>
-            </article>
       </section>
 
       <section id="about">

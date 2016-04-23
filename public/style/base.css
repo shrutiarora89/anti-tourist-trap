@@ -24,6 +24,7 @@
   width: 40em;
   height: 20em;
 }
+
 main {
   width: 77.75em;
 }
@@ -64,6 +65,7 @@ h2 {
   color: red;
   text-align: center;
 }
+
 input[type=checkbox] {
   -ms-transform: scale(5); /* IE */
   -moz-transform: scale(5); /* FF */
@@ -71,6 +73,7 @@ input[type=checkbox] {
   -o-transform: scale(5); /* Opera */
   padding: 1em;
 }
+
 .title {
   font-size: 6em;
   color: white;
@@ -81,6 +84,7 @@ input[type=checkbox] {
   margin-left: 20%;
   margin-right: 20%;
 }
+
 .intro {
   color: white;
   margin-right: 4em;
@@ -89,14 +93,6 @@ input[type=checkbox] {
 ul li {
   display: inline-block;
 }
-
-/*
- #placesTemplate{
-   float:right;
-   width:33%;
-   display:inline-block;
- }*/
-
 #shruti, #ron, #sam {
   width: 40em;
   height: 40em;
@@ -141,7 +137,7 @@ div#texttop {
   background-color: #B4BBCC;
   box-shadow: 0em .25em .25em .25em #1B1B25;
 }
-#placesTemplate,{
+#placesTemplate,#Toggle{
    float:right;
    width:33%;
    display:inline-block;
@@ -154,7 +150,6 @@ div#texttop {
 #Toggle{
   float:right;
 }
-
 #primary_nav_wrap {
 	margin-top:15px
 }
