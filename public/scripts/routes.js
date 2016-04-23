@@ -3,7 +3,14 @@
  page('/', homeController.index);
  page('/home', homeController.index);
  page('/about', aboutController.index);
+
+ // page('/map',mapController.index);
  page('/map', mapNdataController.index);
 
-// Activating page.js
+//  page('/map',mapController.index){
+//     dataController.index();
+// };
+
+
+ // Activating page.js
  page();

@@ -3,6 +3,7 @@
 mapCoordinates ={}
 // initialize the map
 var map = L.map('map').setView([47.6204,-122.3491], 13);
+
 // load a tile layer
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
   {
@@ -13,9 +14,13 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
 //------------------------------------------------------------------
 
 // Accessing the Place Constructor from IIFE poi.js;
+var pointsOnMap = new L.FeatureGroup();
+
 mapCoordinates.addPlacesToMap = function(){
   //accessing the Place.all Array -
   Place.all.forEach(function(a){
+  pointsOnMap.clearLayers();
+  filterer.filteredResults.forEach(function(a){
     console.log(a);
     //accessing the lat-long property of the Object
     if (a["lat-long"]) {
@@ -25,15 +30,17 @@ mapCoordinates.addPlacesToMap = function(){
       var long = a["lat-long"].trim().split(",")[1];
 //assigning the lat and long
       var marker = L.marker([lat,long]).addTo(map);
-
       // PopUp of the Constructor properties- address,name,description.
       marker.bindPopup("<b>Place: </b>"+ a.name +
       "<br> <b>Address: </b>"+ a.Address +
       "<br> <b>Description: </b>"+ a.description+
       "<br> <b>Website: </b>"+ '<a href="' + a.url + '">Open here</a>'+
       "<br> <b>Photo: </b>"+ '<img src="' + a.picture + '"/>');
+      marker.bindPopup(a.name);
+      pointsOnMap.addLayer(marker)
     }
   });
+  map.addLayer(pointsOnMap);
 }
  module.mapCoordinates= mapCoordinates;
  })(window);
