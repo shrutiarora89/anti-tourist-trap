@@ -6,7 +6,7 @@ var map = L.map('map').setView([47.6204,-122.3491], 13);
 // load a tile layer
 L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png',
   {
-    attribution: 'Tiles by <a href="http://www.openstreetmap.org/">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
+    attribution: 'Tiles by <a href="https://www.openstreetmap.org/">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
     maxZoom: 17,
     minZoom: 9
   }).addTo(map);
