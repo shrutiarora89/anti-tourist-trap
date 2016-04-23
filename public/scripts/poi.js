@@ -66,7 +66,7 @@ module.Place = Place;
 
 
 
-var bgImageArray = ["../images/pikePlaceMarket.png", "../images/seattle-background-resize.jpg"]
+var bgImageArray = ["../images/alki.jpg", "../images/kerryPark.jpg", "../images/magnolia.jpg", "../images/ferry.jpg", "../images/fromFerry.jpg", "../images/olympics.jpg"]
 secs = 4;
 bgImageArray.forEach(function(img){
     new Image().src = img;
