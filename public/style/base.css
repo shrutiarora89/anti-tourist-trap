@@ -24,6 +24,7 @@
   width: 40em;
   height: 20em;
 }
+
 main {
   width: 77.75em;
 }
@@ -64,6 +65,7 @@ h2 {
   color: red;
   text-align: center;
 }
+
 input[type=checkbox] {
   -ms-transform: scale(5); /* IE */
   -moz-transform: scale(5); /* FF */
@@ -71,6 +73,7 @@ input[type=checkbox] {
   -o-transform: scale(5); /* Opera */
   padding: 1em;
 }
+
 .title {
   font-size: 6em;
   color: white;
@@ -81,6 +84,7 @@ input[type=checkbox] {
   margin-left: 20%;
   margin-right: 20%;
 }
+
 .intro {
   color: white;
   margin-right: 4em;

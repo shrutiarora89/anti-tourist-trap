@@ -11,28 +11,32 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
     minZoom: 9
   }).addTo(map);
 //------------------------------------------------------------------
-
+var pointsOnMap = new L.FeatureGroup();
 // Accessing the Place Constructor from IIFE poi.js;
 mapCoordinates.addPlacesToMap = function(){
   //accessing the Place.all Array -
   Place.all.forEach(function(a){
-    console.log(a);
-    //accessing the lat-long property of the Object
-    if (a["lat-long"]) {
-      //Getting a string back ["lat,long"]
-      //Trimming it the string to get lat and long
-      var lat = a["lat-long"].trim().split(",")[0]
-      var long = a["lat-long"].trim().split(",")[1];
-//assigning the lat and long
-      var marker = L.marker([lat,long]).addTo(map);
-
-      // PopUp of the Constructor properties- address,name,description.
-      marker.bindPopup("<b>Place: </b>"+ a.name +
-      "<br> <b>Address: </b>"+ a.Address +
-      "<br> <b>Description: </b>"+ a.description+
-      "<br> <b>Website: </b>"+ '<a href="' + a.url + '">Open here</a>'+
-      "<br> <b>Photo: </b>"+ '<img src="' + a.picture + '"/>');
-    }
+    pointsOnMap.clearLayers();
+    filterer.filteredResults.forEach(function(a){
+      console.log(a);
+      //accessing the lat-long property of the Object
+      if (a["lat-long"]) {
+        //Getting a string back ["lat,long"]
+        //Trimming it the string to get lat and long
+        var lat = a["lat-long"].trim().split(",")[0]
+        var long = a["lat-long"].trim().split(",")[1];
+  //assigning the lat and long
+        var marker = L.marker([lat,long]).addTo(map);
+        // PopUp of the Constructor properties- address,name,description.
+        marker.bindPopup("<b>Place: </b>"+ a.name +
+        "<br> <b>Address: </b>"+ a.Address +
+        "<br> <b>Description: </b>"+ a.description+
+        "<br> <b>Website: </b>"+ '<a href="' + a.url + '">Open here</a>'+
+        "<br> <b>Photo: </b>"+ '<img src="' + a.picture + '"/>');
+        pointsOnMap.addLayer(marker)
+      }
+    });
+    map.addLayer(pointsOnMap);
   });
 }
  module.mapCoordinates= mapCoordinates;
