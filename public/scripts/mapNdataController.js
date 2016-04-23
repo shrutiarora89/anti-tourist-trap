@@ -10,5 +10,12 @@
      $('#map').show();
      $('#Toggle').show();//Removeeeeee
    };
+
+   mapNdataController.caller = function() {
+     $.get('/data', function (data) {
+       
+     })
+   }
+
    module.mapNdataController = mapNdataController;
  })(window);

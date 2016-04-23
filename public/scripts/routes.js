@@ -6,7 +6,7 @@
 
  // page('/map',mapController.index);
  page('/map', mapNdataController.index);
- page('/data', '/data');
+ page('/data', mapNdataController.caller);
 
 //  page('/map',mapController.index){
 //     dataController.index();
