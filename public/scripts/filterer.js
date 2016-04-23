@@ -12,6 +12,17 @@ $('#submitButt').on("click", function(e){ //this handles the checkboxes and plac
     filterer.preferances.push($(this).val())
   }); // adds the value of each box with a check into .preferances
   console.log("filterP= " + filterer.preferances);
+  if (filterer.preferances.length === 0){
+     homeController.index();
+     $("#warning").show();
+     $('html, body').animate({scrollTop : 0},500);
+     console.log("warning !")
+     return;
+   }
+   else {
+     $("#warning").hide();
+     console.log("all clear")
+   }
   filterer.places();
   mapCoordinates.addPlacesToMap();
   page('/map');
