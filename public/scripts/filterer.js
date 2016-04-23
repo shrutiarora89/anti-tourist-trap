@@ -15,6 +15,7 @@
     if (filterer.preferances.length === 0){
       homeController.index();
       $("#warning").show();
+      $('html, body').animate({scrollTop : 0},500);
       console.log("warning !")
       return;
     }
