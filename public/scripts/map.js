@@ -18,40 +18,27 @@ mapCoordinates.addPlacesToMap = function(){
   Place.all.forEach(function(a){
     console.log(a);
     //accessing the lat-long property of the Object
-//     if (a["lat-long"]) {
-//       //Getting a string back ["lat,long"]
-//       //Trimming it the string to get lat and long
-//       var lat = a["lat-long"].trim().split(",")[0]
-//       var long = a["lat-long"].trim().split(",")[1];
-// //assigning the lat and long
-//       var marker = L.marker([lat,long]).addTo(map);
-//       marker.bindPopup(a.name);
-      // marker.bindPopup(a.Address);
-      if (a) {
-        //Getting a string back ["lat,long"]
-        //Trimming it the string to get lat and long
-    //     var lat = a["lat-long"].trim().split(",")[0]
-    //     var long = a["lat-long"].trim().split(",")[1];
-    // //assigning the lat and long
-        var marker = L.marker(a).addTo(map);
-        marker.bindPopup(a);
+    if (a["lat-long"]) {
+      //Getting a string back ["lat,long"]
+      //Trimming it the string to get lat and long
+      var lat = a["lat-long"].trim().split(",")[0]
+      var long = a["lat-long"].trim().split(",")[1];
+//assigning the lat and long
+      var marker = L.marker([lat,long]).addTo(map);
 
-
-      // marker.bindPopup($('<a href="#" class="speciallink">TestLink</a>').click(function() {
-      //     alert(a.Address);
-      // })[0]);
-
+      // PopUp of the Constructor properties- address,name,description.
+      marker.bindPopup("<b>Place: </b>"+ a.name +
+      "<br> <b>Address: </b>"+ a.Address +
+      "<br> <b>Description: </b>"+ a.description+
+      "<br> <b>Website: </b>"+ '<a href="' + a.url + '">Open here</a>'+
+      "<br> <b>Photo: </b>"+ '<img src="' + a.picture + '"/>');
     }
   });
 }
-
-
  module.mapCoordinates= mapCoordinates;
  })(window);
  // mapCoordinates.MarkerLinkedToData = function(){
  // });
-
-
 
 
 
