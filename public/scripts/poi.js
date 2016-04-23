@@ -32,7 +32,7 @@ Place.fetchAll = function(){
 // ----------------------------------------
   $.getJSON('/data', function (result) {
     console.log('Scott was here');
-    result.forEach(function(item) {
+    result.rows.forEach(function(item) {
       if (item.category){
         item.category = JSON.parse(item.category)
       }

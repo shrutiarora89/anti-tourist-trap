@@ -24,15 +24,16 @@ app.get('/data', function (req, res) {
   // connect to the PG client
   client.connect(function(err) {
     if(err) { // if error return error
-      res.status(err).send('could not connect to postgres');
+      // res.status(err).send('could not connect to postgres');
+      return console.error('could not connect to postgres');
     }
     // run query on the client...Client -that contacts the server-libraryNode
-    client.query('select * from public."poi"', function(err, result) { //data from poi table
+    client.query('select * from poi', function(err, result) { //data from poi table
       if(err) { // if error return error
         return console.error('error running query', err);
         // res.send('error running query');
       }
-      res.send(result.rows)
+      res.send(result);
       client.end();  //close the client connection
     });
   });
