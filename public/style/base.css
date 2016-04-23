@@ -13,20 +13,16 @@
   background-color: red;
   margin: .5em;
 }
-main {
-  width: 70em;
-}
 nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: lavender;
   height: 5em;
-  width: 79em;
   border: .5em double rgba(255,255,255,0.3);
 }
 a {
-  font-size: 5em;
+  font-size: xx-large;
   text-decoration: none;
   margin: 1em;
 }
@@ -40,13 +36,11 @@ a {
   background-color: lightblue;
 }
 div#texttop {
-  background-color: yellow;
+  background-color: beige;
   color: beige;
   margin-top: 1%;
   padding: 1rem;
   font-family: sans-serif;
-  width: 78em;
-  height: 10em;
 }
 body {
   margin: 0em;
@@ -61,14 +55,6 @@ h1 {
 h2 {
   color: red;
 }
-input[type=checkbox]
-{
-  -ms-transform: scale(5); /* IE */
-  -moz-transform: scale(5); /* FF */
-  -webkit-transform: scale(5); /* Safari and Chrome */
-  -o-transform: scale(5); /* Opera */
-  padding: 1em;
-}
 .title {
   font-size: 3em;
   color: brown;
@@ -78,22 +64,15 @@ input[type=checkbox]
   margin-left: 20%;
   margin-right: 20%;
 }
-.intro {
-  color: black;
-}
-ul li {
-  display: inline-block;
-}
 #initForm {
   /*width: 90em;
   height: 90em;*/
   background-color: lightgreen;
-  width: 13em;
-  font-size: 6em;
+  width: 55em;
 }
 #homeDiv {
   background-color: orange;
-  width: 80em;
+  width: 100%;
   height: 100%;
 }
 #about {
@@ -102,20 +81,24 @@ ul li {
   height: 100%;
 }
 #submitButt {
-  text-align: center;
-  border-radius: .65em;
-  background-color: #B4BBCC;
-  box-shadow: 0em .25em .25em .25em #1B1B25;
-  padding: 1em;
-  width: 35em;
-  height: 10em;
+text-align: center;
+margin-left: 2em;
+margin-right: 2em;
+margin-bottom: 1.25em;
+border-radius: .65em;
+background-color: #B4BBCC;
+box-shadow: 0em .25em .25em .25em #1B1B25;
 }
-#placesTemplate,#Toggle{
-   float:right;
-   width:33%;
-   display:inline-block;
-   height: 100%;
- }
+.intro {
+  color: black;
+}
+
+
+
+ul li {
+  display: inline-block;
+}
+
 
 #map-data-wrapper{
   display:inline-block;
