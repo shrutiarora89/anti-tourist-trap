@@ -79,6 +79,7 @@ input[type=checkbox] {
   font-size: 6em;
   color: white;
   margin-right: 2em;
+  margin-left: 1em;
 }
 .welcome {
   background-color: lavender;
@@ -244,7 +245,6 @@ div#texttop {
 @media (min-width: 769px) {
   body {
     padding: 3em;
-    /*margin-top: 5em;*/
   }
   #picsContainer {
     margin-top: 70em;
