@@ -109,6 +109,8 @@ ul li {
   z-index: 1;
   border-width: medium;
   border-color: red;
+  background-color: white;
+  text-align: center;
 }
 #warning h2 {
   z-index: 1;

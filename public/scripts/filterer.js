@@ -4,15 +4,15 @@
   filterer.preferances = [];
   filterer.filteredResults = [];
 
-  $('#submitButt').on("click", function(e){ //this handles the checkboxes and places selected categories in to .preferances
-    e.preventDefault();
-    filterer.preferances = [];
-    filterer.filteredResults = [] //resests both arrays when clicked
-    $('#initForm :checked').each(function(){
-      filterer.preferances.push($(this).val())
-    }); // adds the value of each box with a check into .preferances
-    console.log("filterP= " + filterer.preferances);
-
+$('#submitButt').on("click", function(e){ //this handles the checkboxes and places selected categories in to .preferances
+  e.preventDefault();
+  filterer.preferances = [];
+  filterer.filteredResults = [] //resests both arrays when clicked
+  $('#initForm :checked').each(function(){
+    filterer.preferances.push($(this).val())
+  }); // adds the value of each box with a check into .preferances
+  console.log("filterP= " + filterer.preferances);
+  // filterer.warning();
     if (filterer.preferances.length === 0){
       homeController.index();
       $("#warning").show();
