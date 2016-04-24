@@ -21,6 +21,7 @@ Place.prototype.toHtml = function() {
    $newPlace.find('#category').html(this.category);
    $newPlace.find('#picture').html(this.picture);
    $newPlace.find('#lat_long').html(this.lat_long);
+   $newPlace.find('#icon-category').html(this.icon-category);
    return $newPlace;
  };
 
@@ -38,22 +39,12 @@ Place.fetchAll = function(){
       }
       var place = new Place(item);
       Place.all.push(place);
-      // console.log(place);
-      // console.log(Place.lat_long);
-      // console.log(place.toHtml().html());
+
     }); // closing result.forEach
 
-
 // ----------------------------------------
-    // console.log(result);
-
     // insantiating new objects
   }); // closing getJSON
-//   .done(function() {
-//     Place.all.forEach(function(ele) {
-//       ele.render();
-//     })
-  // })
 }; //closing fetchAll
 
 Place.fetchAll();
@@ -83,29 +74,3 @@ function backgroundSequence() {
   }
 }
 backgroundSequence();
-// Scott explained the concept. I want to keep it for future reference.
-// this is test code for appending something to the DOM.
-// var el = document.createElement('p');
-// el.textContent = table.name;
-// $('#ArrayOfTables').append(el);
-
-
-// Becky explained the concept. I want to keep it for future reference.
-//Will delete before the final submission.
-//  $.getJSON('/data', function (result) {
-//    var f = result.filter(function(row){
-//      return row.category === "architecture";
-//    })
-//    console.log(result);
-//    console.log(f);
-//   });
-
-
-// this.name = opts.name;
-// this.url = opts.url;
-// this.location = opts.location;
-// this.description = opts.description;
-// this.hoursOfOperation = opts.hoursOfOperation;
-// this.category = opts.category;
-// this.picture = opts.picture;
-// this.Lat_Long = opts.Lat_Long;

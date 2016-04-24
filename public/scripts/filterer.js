@@ -22,7 +22,7 @@ $('#submitButt').on("click", function(e){ //this handles the checkboxes and plac
     filterer.preferances.push($(this).val())
   }); // adds the value of each box with a check into .preferances
   console.log("filterP= " + filterer.preferances);
-  filterer.warning();
+  // filterer.warning();
   filterer.places();
   mapCoordinates.addPlacesToMap();
   page('/map');
