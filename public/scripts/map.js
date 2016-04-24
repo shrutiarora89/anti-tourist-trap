@@ -18,8 +18,8 @@ mapCoordinates.addPlacesToMap = function(){
   Place.all.forEach(function(a){
     pointsOnMap.clearLayers();
     filterer.filteredResults.forEach(function(a){
-      console.log(a);
-      console.log(a["category"]);
+      // console.log(a);
+      // console.log(a["category"]);
 
       //accessing the lat-long property of the Object
       if (a["lat-long"]) {
@@ -27,11 +27,11 @@ mapCoordinates.addPlacesToMap = function(){
         //Trimming it the string to get lat and long
         var lat = a["lat-long"].trim().split(",")[0]
         var long = a["lat-long"].trim().split(",")[1];
-        console.log(a["icon-category"]);
+        // console.log(a["icon-category"]);
 
 // ------------------------------------------------------------------
           if(a["icon-category"] === "park"){
-              console.log(a["icon-category"]);
+              // console.log(a["icon-category"]);
             // console.log(place.toHtml().html());
                var icon = L.MakiMarkers.icon({
                    icon: "park",
@@ -42,7 +42,7 @@ mapCoordinates.addPlacesToMap = function(){
                  icon: icon
                }).addTo(map);
           } else if(a["icon-category"] === "airport"){
-              console.log(a["icon-category"]);
+              // console.log(a["icon-category"]);
             // console.log(place.toHtml().html());
                var icon = L.MakiMarkers.icon({
                    icon: "airport",
@@ -53,7 +53,7 @@ mapCoordinates.addPlacesToMap = function(){
                  icon: icon
                }).addTo(map);
             } else if(a["icon-category"] === "beach"){
-                console.log(a["icon-category"]);
+                // console.log(a["icon-category"]);
               // console.log(place.toHtml().html());
                  var icon = L.MakiMarkers.icon({
                      icon: "swimming",
@@ -64,18 +64,18 @@ mapCoordinates.addPlacesToMap = function(){
                    icon: icon
                  }).addTo(map);
               } else if(a["icon-category"] === "monument"){
-                  console.log(a["icon-category"]);
+                  // console.log(a["icon-category"]);
                 // console.log(place.toHtml().html());
                    var icon = L.MakiMarkers.icon({
                        icon: "monument",
-                       color: "#952",
+                       color: "#F03",
                        size: "l"
                    });
                    marker = L.marker([lat,long],{
                      icon: icon
                    }).addTo(map);
                 } else if(a["icon-category"] === "museum"){
-                    console.log(a["icon-category"]);
+                    // console.log(a["icon-category"]);
                   // console.log(place.toHtml().html());
                      var icon = L.MakiMarkers.icon({
                          icon: "museum",
@@ -86,7 +86,7 @@ mapCoordinates.addPlacesToMap = function(){
                        icon: icon
                      }).addTo(map);
                   } else if(a["icon-category"] === "shop"){
-                      console.log(a["icon-category"]);
+                      // console.log(a["icon-category"]);
                     // console.log(place.toHtml().html());
                        var icon = L.MakiMarkers.icon({
                            icon: "shop",
@@ -97,7 +97,7 @@ mapCoordinates.addPlacesToMap = function(){
                          icon: icon
                        }).addTo(map);
                     } else if(a["icon-category"] === "playground"){
-                        console.log(a["icon-category"]);
+                        // console.log(a["icon-category"]);
                       // console.log(place.toHtml().html());
                          var icon = L.MakiMarkers.icon({
                              icon: "playground",
@@ -108,7 +108,7 @@ mapCoordinates.addPlacesToMap = function(){
                            icon: icon
                          }).addTo(map);
                       }  else if(a["icon-category"] === "garden"){
-                          console.log(a["icon-category"]);
+                          // console.log(a["icon-category"]);
                         // console.log(place.toHtml().html());
                            var icon = L.MakiMarkers.icon({
                                icon: "garden",
@@ -119,7 +119,7 @@ mapCoordinates.addPlacesToMap = function(){
                              icon: icon
                            }).addTo(map);
                         } else if(a["icon-category"] === "dam"){
-                            console.log(a["icon-category"]);
+                            // console.log(a["icon-category"]);
                           // console.log(place.toHtml().html());
                              var icon = L.MakiMarkers.icon({
                                  icon: "dam",
@@ -129,7 +129,51 @@ mapCoordinates.addPlacesToMap = function(){
                              marker = L.marker([lat,long],{
                                icon: icon
                              }).addTo(map);
-                          }
+                          } else if(a["icon-category"] === "harbor"){
+                              // console.log(a["icon-category"]);
+                            // console.log(place.toHtml().html());
+                               var icon = L.MakiMarkers.icon({
+                                   icon: "harbor",
+                                   color: "#DF2",
+                                   size: "l"
+                               });
+                               marker = L.marker([lat,long],{
+                                 icon: icon
+                               }).addTo(map);
+                            }  else if(a["icon-category"] === "music"){
+                                // console.log(a["icon-category"]);
+                              // console.log(place.toHtml().html());
+                                 var icon = L.MakiMarkers.icon({
+                                     icon: "music",
+                                     color: "#F0A",
+                                     size: "l"
+                                 });
+                                 marker = L.marker([lat,long],{
+                                   icon: icon
+                                 }).addTo(map);
+                              } else if(a["icon-category"] === "zoo"){
+                                  // console.log(a["icon-category"]);
+                                // console.log(place.toHtml().html());
+                                   var icon = L.MakiMarkers.icon({
+                                       icon: "zoo",
+                                       color: "#303",
+                                       size: "l"
+                                   });
+                                   marker = L.marker([lat,long],{
+                                     icon: icon
+                                   }).addTo(map);
+                                }  else if(a["icon-category"] === "star"){
+                                    // console.log(a["icon-category"]);
+                                  // console.log(place.toHtml().html());
+                                     var icon = L.MakiMarkers.icon({
+                                         icon: "star",
+                                         color: "#35F",
+                                         size: "l"
+                                     });
+                                     marker = L.marker([lat,long],{
+                                       icon: icon
+                                     }).addTo(map);
+                                  }
           // ------------------------------------------
           else{
               marker = L.marker([lat,long]).addTo(map);
@@ -138,7 +182,8 @@ mapCoordinates.addPlacesToMap = function(){
         "<br> <b>Address: </b>"+ a.Address +
         "<br> <b>Description: </b>"+ a.description+
         "<br> <b>Website: </b>"+ '<a href="' + a.url + '">Open here</a>'+
-        "<br> <b>Photo: </b>"+ '<img src="' + a.picture + '"/>');
+        // "<br> <b>Photo: </b>"+ '<img src="' + a.picture + '"/>';
+        "<br> <b>Photo: </b>"+ '<img src="' + a.picture + '"style="max-height:100px;"/>');
         pointsOnMap.addLayer(marker)
       }
     });
