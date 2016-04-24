@@ -85,7 +85,13 @@ input[type=checkbox] {
   margin-left: 20%;
   margin-right: 20%;
 }
-
+html {
+  margin: 0;
+  background-size: cover;
+  background: url("../images/kerryPark.jpg") no-repeat center center fixed;
+  background-blend-mode: hard-light;;
+  transition: 1s;
+}
 .intro {
   color: white;
   margin-right: 4em;
