@@ -63,9 +63,6 @@ module.Place = Place;
 })(window);
 
 
-
-
-
 var bgImageArray = ["../images/alki.jpg", "../images/kerryPark.jpg", "../images/magnolia.jpg", "../images/ferry.jpg", "../images/fromFerry.jpg", "../images/olympics.jpg"];
 secs = 4;
 bgImageArray.forEach(function(img){
@@ -85,6 +82,9 @@ function backgroundSequence() {
   }
 }
 backgroundSequence();
+
+
+
 // Scott explained the concept. I want to keep it for future reference.
 // this is test code for appending something to the DOM.
 // var el = document.createElement('p');
