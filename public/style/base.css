@@ -90,7 +90,7 @@ html {
   background-size: cover;
   background: url("../images/kerryPark.jpg") no-repeat center center fixed;
   background-blend-mode: hard-light;;
-  transition: 1s;
+  transition: 3s;
 }
 .intro {
   color: white;
