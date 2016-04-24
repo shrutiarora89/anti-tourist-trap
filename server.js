@@ -20,6 +20,7 @@ app.use(express.static(__dirname + '/public'));
 app.get('/data', function (req, res) {
 
   var connectionString = process.env.ELEPHANTSQL_URL;
+
   var client = new pg.Client(connectionString);
   // connect to the PG client
   client.connect(function(err) {
