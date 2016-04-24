@@ -4,16 +4,6 @@
   filterer.preferances = [];
   filterer.filteredResults = [];
 
-  // filterer.warning = function(){
-  //   if (filterer.preferances = []){
-  //     $("#warning").show();
-  //     break;
-  //   }
-  //   else {
-  //     $("#warning").hide();
-  //   }
-  // }
-
 $('#submitButt').on("click", function(e){ //this handles the checkboxes and places selected categories in to .preferances
   e.preventDefault();
   filterer.preferances = [];
@@ -23,9 +13,20 @@ $('#submitButt').on("click", function(e){ //this handles the checkboxes and plac
   }); // adds the value of each box with a check into .preferances
   console.log("filterP= " + filterer.preferances);
   // filterer.warning();
-  filterer.places();
-  mapCoordinates.addPlacesToMap();
-  page('/map');
+    if (filterer.preferances.length === 0){
+      homeController.index();
+      $("#warning").show();
+      $('html, body').animate({scrollTop : 0},500);
+      console.log("warning !")
+      return;
+    }
+    else {
+      $("#warning").hide();
+      console.log("all clear")
+    }
+    filterer.places();
+    mapCoordinates.addPlacesToMap();
+    page('/map');
   })
 
   filterer.places = function () { //this handles the actual filtering of our data

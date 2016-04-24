@@ -10,5 +10,6 @@
      $('#map').show();
      $('#Toggle').show();//Removeeeeee
    };
+
    module.mapNdataController = mapNdataController;
  })(window);

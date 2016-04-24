@@ -32,8 +32,8 @@ Place.prototype.toHtml = function() {
 Place.fetchAll = function(){
 // ----------------------------------------
   $.getJSON('/data', function (result) {
-    console.log(result)
-    result.forEach(function(item) {
+    console.log('Scott was here');
+    result.rows.forEach(function(item) {
       if (item.category){
         item.category = JSON.parse(item.category)
       }
@@ -55,7 +55,7 @@ module.Place = Place;
 
 
 
-var bgImageArray = ["../images/alki.jpg", "../images/kerryPark.jpg", "../images/magnolia.jpg", "../images/ferry.jpg", "../images/fromFerry.jpg", "../images/olympics.jpg"]
+var bgImageArray = ["../images/alki.jpg", "../images/kerryPark.jpg", "../images/magnolia.jpg", "../images/ferry.jpg", "../images/fromFerry.jpg", "../images/olympics.jpg"];
 secs = 4;
 bgImageArray.forEach(function(img){
     new Image().src = img;

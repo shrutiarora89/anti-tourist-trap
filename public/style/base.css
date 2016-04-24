@@ -49,6 +49,7 @@ a {
 body {
   margin: 0em;
   min-height: 100vh;
+  width: 74em;
 }
 #meetTheTeam {
   font-size: 9em;
@@ -84,7 +85,13 @@ input[type=checkbox] {
   margin-left: 20%;
   margin-right: 20%;
 }
-
+html {
+  margin: 0;
+  background-size: cover;
+  background: url("../images/kerryPark.jpg") no-repeat center center fixed;
+  background-blend-mode: hard-light;;
+  transition: 3s;
+}
 .intro {
   color: white;
   margin-right: 4em;
@@ -97,10 +104,25 @@ ul li {
   width: 40em;
   height: 40em;
 }
-#warning {
+#warning  {
   display: none;
   z-index: 1;
+  border-width: medium;
+  border-color: red;
+  background-color: white;
+  text-align: center;
+}
+#warning h2 {
+  z-index: 1;
   padding: 1em;
+  color: red;
+}
+#warning p {
+  z-index: 1;
+  padding: 1em;
+  font-size: 1.15em;
+  border-width: medium;
+  border-color: red;
 }
 #placesTemplate{
   display: inline-block;
@@ -140,7 +162,7 @@ div#texttop {
   text-align: center;
   border-radius: .25em;
   background-color: #B4BBCC;
-  box-shadow: 0em .25em .25em .25em #1B1B25;
+  box-shadow: 0em .05em .05em .05em #1B1B25;
 }
 #placesTemplate,#Toggle{
    float:right;
@@ -224,9 +246,11 @@ div#texttop {
 @media (min-width: 769px) {
   body {
     padding: 3em;
-    margin-top: 5em;
   }
   #picsContainer {
     margin-top: 70em;
+  }
+  .title {
+    /*font-size: 4em;*/
   }
 }
