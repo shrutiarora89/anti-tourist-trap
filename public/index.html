@@ -1,26 +1,17 @@
-<!-- ////////////////////////////////////////////////
-//////////////////CLIENT FILE///////////////////
-////////////////////////////////////////////////
-///////////////////CLIENT FILE///////////////// -->
 <html>
   <head>
-    <title>A Leaflet map!</title>
+    <title>Anti-Tourist-Trap</title>
     <link href='https://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+    <link rel="stylesheet" href="style/normalize.css">
     <link rel="stylesheet" href="style/leaflet.css">
     <link rel="stylesheet" href="style/base.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
     <script src="scripts/jquery-2.1.4.js" charset="utf-8"></script>
     <script src="vendors/handlebars.js"></script>
+
     <script src='https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet-src.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-icon.png"></script>
   </head>
-
-  <!-- <script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
- <a href="https://www.accuweather.com/en/us/seattle-wa/98104/weather-forecast/351409" class="aw-widget-legal">
-</a><div id="awcc1461382747454" class="aw-widget-current"  data-locationkey="" data-unit="f" data-language="en-us" data-useip="true" data-uid="awcc1461382747454"></div> -->
-
-
   <body>
     <main>
       <nav id="primary_nav_wrap">
@@ -33,10 +24,10 @@
             </li>
         </ul>
       </nav>
-     <div id="warning">
-       <h2>WAIT A MINUTE!</h2>
-       <p>It seems you went right to the map before you told us what you are interested in. <br> Please select something from the form on our Home page to see all the great things Seattle has to offer</p>
-     </div>
+      <div id="warning">
+        <h2>WAIT A MINUTE!</h2>
+        <p>It seems you went right to the map before you told us what you are interested in. <br> Please select something from the form on our Home page to see all the great things Seattle has to offer</p>
+      </div>
       <section id="map">Map Section
       </section>
       <section id="homeDiv">
@@ -59,7 +50,6 @@
           </section>
         </div>
       </section>
-
       <section id="about">
           <h1 id="meetTheTeam">Meet The Team</h1>
         <div id="picsContainer">
@@ -72,22 +62,24 @@
             <p class="bio">these are words these are words these are words these are words these are words these are words these are words these are words these are words these are words these are words these are words these are words these are words these are words these are words these are words these are words these are words these are words these are words.</p>
           </div>
           <div class="pics">
-            <img id="sam" src="images/pug.jpeg">
+            <img id="sam" src="images/headshot.jpg">
             <p class="bio">these are words these are words these are words these are words these are words these are words these are words these are words these are words these are words these are words these are words these are words these are words these are words these are words these are words these are words these are words these are words these are words.</p>
           </div>
         </div>
       </section>
-
       <section id="postgresData"></section>
-
-      </main>
-      <script src="scripts/page.js"></script>
-      <script src="scripts/map.js" charset="utf-8"></script>
-      <script src="scripts/poi.js" charset="utf-8"></script>
-      <script src="scripts/homeController.js"></script>
-      <script src="scripts/mapNdataController.js"></script>
-      <script src="scripts/aboutController.js"></script>
-      <script src="scripts/filterer.js"></script>
-      <script src="scripts/routes.js"></script>
-    </body>
+    </main>
+    <script src="scripts/jquery-2.1.4.js" charset="utf-8"></script>
+    <script src="scripts/page.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script src="scripts/map.js" charset="utf-8"></script>
+    <script src="scripts/poi.js" charset="utf-8"></script>
+    <script src="scripts/Leaflet.MakiMarkers.js" charset="utf-8"></script>
+    <script src="scripts/homeController.js"></script>
+    <script src="scripts/mapNdataController.js"></script>
+    <script src="scripts/aboutController.js"></script>
+    <script src="scripts/filterer.js"></script>
+    <script src="scripts/select.js"></script>
+    <script src="scripts/routes.js"></script>
+  </body>
 </html>

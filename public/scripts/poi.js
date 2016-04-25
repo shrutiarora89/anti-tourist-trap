@@ -6,11 +6,9 @@ function Place (opts) {
     }, this);
 }
 
-//Array for place
 Place.all = [];
 
 Place.prototype.toHtml = function() {
-  // console.dir(this);
    var $newPlace = $('.table-template').clone();
    $newPlace.removeClass('table-template');
    $newPlace.find('#name').html(this.name);
@@ -21,15 +19,12 @@ Place.prototype.toHtml = function() {
    $newPlace.find('#category').html(this.category);
    $newPlace.find('#picture').html(this.picture);
    $newPlace.find('#lat_long').html(this.lat_long);
+   $newPlace.find('#icon-category').html(this.icon-category);
    return $newPlace;
  };
 
-Place.prototype.render = function() {
-  $('#placesTemplate').append(this.toHtml());
-}
 
 Place.fetchAll = function(){
-// ----------------------------------------
   $.getJSON('/data', function (result) {
     console.log('Scott was here');
     result.rows.forEach(function(item) {
@@ -38,25 +33,10 @@ Place.fetchAll = function(){
       }
       var place = new Place(item);
       Place.all.push(place);
-      // console.log(place);
-      // console.log(Place.lat_long);
-      // console.log(place.toHtml().html());
-    }); // closing result.forEach
-    // I have got the result from server
-    // and have added to all array.
-    // Now I want to add the places on the map
 
-
-// ----------------------------------------
-    // console.log(result);
-
-    // insantiating new objects
-  }).done(function() {
-    Place.all.forEach(function(ele) {
-      ele.render();
-    })
-  }) // closing getJSON
-}; //closing fetchAll
+    });
+  });
+};
 
 Place.fetchAll();
 module.Place = Place;
@@ -70,7 +50,6 @@ var bgImageArray = ["../images/alki.jpg", "../images/kerryPark.jpg", "../images/
 secs = 4;
 bgImageArray.forEach(function(img){
     new Image().src = img;
-    // caches images, avoiding white flash between background replacements
 });
 
 function backgroundSequence() {
@@ -85,29 +64,3 @@ function backgroundSequence() {
   }
 }
 backgroundSequence();
-// Scott explained the concept. I want to keep it for future reference.
-// this is test code for appending something to the DOM.
-// var el = document.createElement('p');
-// el.textContent = table.name;
-// $('#ArrayOfTables').append(el);
-
-
-// Becky explained the concept. I want to keep it for future reference.
-//Will delete before the final submission.
-//  $.getJSON('/data', function (result) {
-//    var f = result.filter(function(row){
-//      return row.category === "architecture";
-//    })
-//    console.log(result);
-//    console.log(f);
-//   });
-
-
-// this.name = opts.name;
-// this.url = opts.url;
-// this.location = opts.location;
-// this.description = opts.description;
-// this.hoursOfOperation = opts.hoursOfOperation;
-// this.category = opts.category;
-// this.picture = opts.picture;
-// this.Lat_Long = opts.Lat_Long;

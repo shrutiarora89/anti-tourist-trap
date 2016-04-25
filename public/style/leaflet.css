@@ -1,17 +1,9 @@
-/*Remove to see the map*/
 #map {
+
   height: 100%;
   width:95%;
   display: inline-block;
-}
-
-
-/*#name,#url,#location,#description,#hoursOfOperation,#picture{
+  position: relative;
   display: inline-block;
-}
-tr{
-  display: inline-block;
-}*/
-table{
-  width:70%;
+  border: .1em solid black;
 }
