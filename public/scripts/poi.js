@@ -6,11 +6,9 @@ function Place (opts) {
     }, this);
 }
 
-//Array for place
 Place.all = [];
 
 Place.prototype.toHtml = function() {
-  // console.dir(this);
    var $newPlace = $('.table-template').clone();
    $newPlace.removeClass('table-template');
    $newPlace.find('#name').html(this.name);
@@ -25,12 +23,8 @@ Place.prototype.toHtml = function() {
    return $newPlace;
  };
 
-// Place.prototype.render = function() {
-//   $('#placesTemplate').append(this.toHtml());
-// }
 
 Place.fetchAll = function(){
-// ----------------------------------------
   $.getJSON('/data', function (result) {
     console.log('Scott was here');
     result.rows.forEach(function(item) {
@@ -40,12 +34,9 @@ Place.fetchAll = function(){
       var place = new Place(item);
       Place.all.push(place);
 
-    }); // closing result.forEach
-
-// ----------------------------------------
-    // insantiating new objects
-  }); // closing getJSON
-}; //closing fetchAll
+    });
+  });
+};
 
 Place.fetchAll();
 module.Place = Place;
@@ -59,7 +50,6 @@ var bgImageArray = ["../images/alki.jpg", "../images/kerryPark.jpg", "../images/
 secs = 4;
 bgImageArray.forEach(function(img){
     new Image().src = img;
-    // caches images, avoiding white flash between background replacements
 });
 
 function backgroundSequence() {

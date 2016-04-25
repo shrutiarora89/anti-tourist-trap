@@ -1,17 +1,9 @@
-/*Remove to see the map*/
 #map {
 
   height: 100%;
   width:95%;
   display: inline-block;
-  margin-left: 10px;
   position: relative;
   display: inline-block;
-  border: 5px solid black;
+  border: .1em solid black;
 }
-
-
-
-/*table{
-  width:70%;
-}*/
