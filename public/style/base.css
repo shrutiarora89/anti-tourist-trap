@@ -132,6 +132,24 @@ ul li {
   width:35%;
   background-color: lightblue;
 }
+#warning  {
+ display: none;
+ z-index: 1;
+ border-width: medium;
+ border-color: red;t
+}
+#warning h2 {
+ z-index: 1;
+ padding: 1em;
+ color: red;
+}
+#warning p {
+ z-index: 1;
+ padding: 1em;
+ font-size: 1.15em;
+ border-width: medium;
+ border-color: red;
+}
 div#texttop {
   color: beige;
   margin-top: 1%;
